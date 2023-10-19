@@ -1,0 +1,117 @@
+<div class="cont">
+<section class="container" [ngClass]="formStatus">
+    <header>Signup</header>
+  
+    <form class="form" [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted()">
+      <div class="column">
+        <div class="input-box">
+          <input type="text" placeholder="First Name" formControlName="firstname" [(ngModel)]="signupobj.firstname"/>
+          <small *ngIf="reactiveForm.get('firstname').errors?.['required'] && reactiveForm.get('firstname').touched">
+            *First Name is a required field.
+          </small>
+          <small *ngIf="reactiveForm.get('firstname').errors?.['noSpaceAllowed'] && reactiveForm.get('firstname').touched">
+            *No Space is allowed for First Name.
+          </small>
+        </div> 
+  
+        <div class="input-box">
+          <input type="text" placeholder="Last Name" formControlName="lastname"  [(ngModel)]="signupobj.lastname"/>
+          <small *ngIf="reactiveForm.get('lastname').errors?.['required'] && reactiveForm.get('lastname').touched">
+            *Last Name is a required field.
+          </small>
+          <small *ngIf="reactiveForm.get('lastname').errors?.['noSpaceAllowed'] && reactiveForm.get('lastname').touched">
+            *No Space is allowed for Last Name.
+          </small>
+        </div>
+      </div>    
+  
+      <div class="input-box">
+        <input type="text" placeholder="Email" formControlName="email" [(ngModel)]="signupobj.email"/>
+        <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
+          *Entered Email is not valid.
+        </small>
+      </div>
+      <div class="column">
+        <div class="input-box">
+          <input type="password" placeholder="Password" formControlName="password" [(ngModel)]="signupobj.password"/>
+          <small *ngIf="reactiveForm.get('password').invalid && reactiveForm.get('password').touched">
+            *Enter a valid password.
+          </small>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Confirm Password" formControlName="Cpassword"/>
+          <small *ngIf="reactiveForm.errors?.['passwordmatcherror']  && reactiveForm.get('Cpassword').touched && reactiveForm.get('Cpassword').dirty" >*Password does not match </small>
+        </div>
+      </div>
+      
+  
+      <div class="gender-box">
+        <h3>Gender</h3>
+        <div class="gender-option">
+          <div class="gender">
+            <input type="radio" value="male" id="check-male" formControlName="gender" />
+            <label for="check-male">Male</label>
+          </div>
+          <div class="gender">
+            <input type="radio" value="female" id="check-female" formControlName="gender" />
+            <label for="check-female">Female</label>
+          </div>
+          <div class="gender">
+            <input type="radio" value="other" id="check-other" formControlName="gender" />
+            <label for="check-other">Prefer not to say</label>
+          </div>
+        </div>
+      </div>
+  
+      <div class="input-box address" formGroupName="address">
+        <label>Address</label>
+        <input type="text" placeholder="Street address" formControlName="street"/>
+        <small *ngIf="reactiveForm.get('address.street').invalid && reactiveForm.get('address.street').touched">
+          *Street address is a required field.
+        </small>
+        <div class="column">
+          <div class="select-box">
+            <select name="country" formControlName="country">
+              <option>America</option>
+              <option>Japan</option>
+              <option>India</option>
+              <option>Nepal</option>
+            </select>
+            <small *ngIf="reactiveForm.get('address.country').invalid && reactiveForm.get('address.country').touched">
+              *Country is a required field.
+            </small>
+          </div>
+          <input type="text" placeholder="City" formControlName="city"/>
+        </div>
+        <div class="column">
+          <input type="text" placeholder="Region" formControlName="region" />
+          <input type="number" placeholder="Postal code" formControlName="postal" />
+          <small *ngIf="reactiveForm.get('address.postal').invalid && reactiveForm.get('address.postal').touched">
+            *Postal Code is a required filed.
+          </small>
+        </div>
+      </div>
+      <input type="submit" value="Submit" class="submit-btn"  [disabled]="!reactiveForm.valid">
+    </form>
+    <p class="al"><a routerLink="/login" class="log">Already have an account? Login</a></p>
+  </section>
+</div>  
+  <!--
+  <section class="user-detail-container">
+    <div class="user-details-container">
+      <div class="user-avatar">
+        <p>{{formdata.firstname?.slice(0, 1)}}{{formdata.lastname?.slice(0, 1)}}</p>
+      </div>
+      <div class="user-details">
+        <p><b>Name:  </b>{{formdata?.firstname}} {{formdata?.lastname}}</p>
+        <p><b>Email:</b> {{formdata.email}}</p>
+        <div class="user-name">
+          <h3>Address</h3>
+        </div>
+        <span>{{formdata.address?.country}}</span>.
+        <span> {{formdata.address?.city}}</span>.
+        <span> {{formdata.address?.region}}</span>.
+        <span> {{formdata.address?.postal}}</span>
+      </div>
+    </div>
+  </section>-->

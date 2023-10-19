@@ -1,0 +1,23 @@
+<div class="cont">
+<section class="container" [ngClass]="formStatus">
+    <header>Login</header>
+  
+    <form class="form" [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted()">   
+      <div class="input-box">
+        <input type="text" placeholder="Email" formControlName="email" [(ngModel)]="loginobj.email"/>
+        <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
+          *Entered Email is not valid.
+        </small>
+      </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" formControlName="password"[(ngModel)]="loginobj.password"/>
+          <small *ngIf="reactiveForm.get('password').invalid && reactiveForm.get('password').touched">
+            *Enter a valid password.
+          </small>
+        </div>
+      <input type="submit" value="Login" class="submit-btn">
+      <p class="al"><a class = "sign" routerLink="/signup">Don't have an account?</a></p>
+      <p class="a1"><a class = "sign" routerLink="/signup">Register here</a></p>
+    </form>
+</section>
+</div>
