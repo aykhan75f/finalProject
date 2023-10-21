@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from '../Validators/noSpaceAllowed.Validator';
 import { matchpassword } from '../Validators/matchpassword.validator';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,7 +25,7 @@ export class LoginComponent implements OnInit {
         console.log(this.signupusers);
       }
     }
-  constructor(){
+  constructor(private router:Router){
     this.reactiveForm = new FormGroup({
       firstname: new FormControl(null, [Validators.required, CustomValidators.noSpaceAllowed]),
       lastname: new FormControl(null, [Validators.required, CustomValidators.noSpaceAllowed]),
@@ -49,10 +51,11 @@ export class LoginComponent implements OnInit {
     console.log(this.loginobj.password);
     const isUserExist = this.signupusers.find(m => m.email == this.loginobj.email && m.password == this.loginobj.password);
     if (isUserExist !=undefined){
-      alert('User Login Successfully');
+      alert('User Login Successfull');
+      this.router.navigate(['/products'])
     }
     else{
-      alert('Wrong credentials');
+      alert('Oops!!! Wrong credentials,Try Again');
     }
     console.log(this.reactiveForm);
     this.formdata = this.reactiveForm.value;
