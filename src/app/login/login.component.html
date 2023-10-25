@@ -2,7 +2,7 @@
 <section class="container" [ngClass]="formStatus">
     <header>Login</header>
   
-    <form class="form" [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted()">   
+    <form class="form" [formGroup]="reactiveForm"  (ngSubmit)="OnFormSubmitted()">   
       <div class="input-box">
         <input type="text" placeholder="Email" formControlName="email" [(ngModel)]="loginobj.email"/>
         <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
@@ -18,6 +18,16 @@
       <input type="submit" value="Login" class="submit-btn">
       <p class="al"><a class = "sign" routerLink="/signup">Don't have an account?</a></p>
       <p class="a1"><a class = "sign" routerLink="/signup">Register here</a></p>
+      <hr>
+      <div>
+        <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
+            <div class="text-center">
+                <div class="a5">
+                    <img src="../../assets/icons8-google-48.png" alt="" height="24px" width="24px"> Sign In with Google
+                </div>
+            </div>
+        </a>
+    </div>
     </form>
 </section>
 </div>

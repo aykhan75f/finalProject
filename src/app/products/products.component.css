@@ -26,6 +26,11 @@
 .card {
     padding: 20px;
     margin: 50px;
+    border-radius:35px;
+    transition: 0.3s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.2);
 }
 
 .card img {
@@ -33,10 +38,4 @@
     height: 200px;
     margin-bottom: 15px;
     margin-left: 39px;
-    transition: 0.3s ease-in-out;
-}
-
-.card img:hover {
-    transition: 0.3s ease-in-out;
-    transform: scale(1.2);
 }

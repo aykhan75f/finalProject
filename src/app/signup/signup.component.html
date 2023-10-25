@@ -2,7 +2,7 @@
 <section class="container" [ngClass]="formStatus">
     <header>Signup</header>
   
-    <form class="form" [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted()">
+    <form class="form" [formGroup]="reactiveForm" #postForm="ngForm" (ngSubmit)="OnFormSubmitted(postForm.value)">
       <div class="column">
         <div class="input-box">
           <input type="text" placeholder="First Name" formControlName="firstname" [(ngModel)]="signupobj.firstname"/>
@@ -96,22 +96,3 @@
     <p class="al"><a routerLink="/login" class="log">Already have an account? Login</a></p>
   </section>
 </div>  
-  <!--
-  <section class="user-detail-container">
-    <div class="user-details-container">
-      <div class="user-avatar">
-        <p>{{formdata.firstname?.slice(0, 1)}}{{formdata.lastname?.slice(0, 1)}}</p>
-      </div>
-      <div class="user-details">
-        <p><b>Name:  </b>{{formdata?.firstname}} {{formdata?.lastname}}</p>
-        <p><b>Email:</b> {{formdata.email}}</p>
-        <div class="user-name">
-          <h3>Address</h3>
-        </div>
-        <span>{{formdata.address?.country}}</span>.
-        <span> {{formdata.address?.city}}</span>.
-        <span> {{formdata.address?.region}}</span>.
-        <span> {{formdata.address?.postal}}</span>
-      </div>
-    </div>
-  </section>-->

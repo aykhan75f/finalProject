@@ -1,13 +1,9 @@
 .form-control {
-    border-radius: 3px;
+    border-radius: 35px;
     width: 600px;
     margin-left: 300px;
+    margin-top: 5px;
 }
-
-.search-icon {
-    position: absolute;
-    z-index: 10;
-    right: 28%;
-    top: 20px;
-    color: blue;
+.head{
+    background-image: url("https://wallpapercave.com/wp/wp2757874.gif");
 }

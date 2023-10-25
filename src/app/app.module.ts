@@ -13,6 +13,8 @@ import { FilterPipe } from './shared/filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire/compat';
+import { NotfoundComponent } from './notfound/notfound.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,7 @@ import {AngularFireModule} from '@angular/fire/compat';
     HeaderComponent,
     ProductsComponent,
     FilterPipe,
-    
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

@@ -32,13 +32,26 @@
     text-align: center;
     transition: transform 0.2s ease;
     margin-top: 15px;
+    font-size: 12pt;
+
   }
   .al:hover{
+    transform: scale(1.03);
+  }
+  .a5{
+    text-align: center;
+    transition: transform 0.2s ease;
+    margin-top: 7px;
+    color: black;
+  }
+  a5:hover{
     transform: scale(1.03);
   }
   .a1{
     text-align: center;
     transition: transform 0.2s ease;
+    font-size: 12pt;
+    margin-bottom: 5px;
   }
   .a1:hover{
     transform: scale(1.03);
