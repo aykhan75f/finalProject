@@ -22,7 +22,7 @@ export class SignupComponent {
       firstname: new FormControl(null, [Validators.required, CustomValidators.noSpaceAllowed]),
       lastname: new FormControl(null, [Validators.required, CustomValidators.noSpaceAllowed]),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required,Validators.minLength(8),Validators.maxLength(16)]),
+      password: new FormControl(null, [Validators.required,CustomValidators.passwordPattern]),
       Cpassword: new FormControl(null, [Validators.required]),
       gender: new FormControl('male'),
       address: new FormGroup({
