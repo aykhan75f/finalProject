@@ -14,7 +14,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire/compat';
 import { NotfoundComponent } from './notfound/notfound.component';
-
+import { HoverDirective } from './Directive/hover.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     HeaderComponent,
     ProductsComponent,
     FilterPipe,
-    NotfoundComponent
+    NotfoundComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,12 @@ import { NotfoundComponent } from './notfound/notfound.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
     console.log(this.loginobj.email);
     console.log(this.loginobj.password);
     this.reactiveForm.reset();
-    this.router.navigate(['/products']);
-    
     }
     signInWithGoogle() {
       this.loginservice.googleSignIn();

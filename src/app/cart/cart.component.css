@@ -1,48 +1,87 @@
-.card {
-    height: 60vh;
-    margin: 25px;
-    padding: 25px;
-}
-
-.center img {
-    text-decoration: none;
-    color: inherit;
-    border: none;
-    outline: none;
-    height: 162px;
-    width: 250px;
-    margin: 20px 0px;
-}
-
-h4,
-h6 {
-    font-weight: 400;
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.card-table {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: none;
-    word-wrap: break-word;
+/* styles.css */
+.mat-product-image {
+    width: 120px;
+  }
+  
+  .mat-description {
+    width: 25%;
+  }
+  
+  .mat-price {
+    width: 12%;
+  }
+  
+  .mat-quantity {
+    width: 12%;
+  }
+  
+  .mat-total {
+    width: 12%;
+  }
+  
+  .mat-button {
+    margin: 0;
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+  
+  .mat-button-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .mat-button-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .mat-button-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .mat-card {
     background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: .25rem;
-}
-
-.center .btn {
-    font-size: 14px !important;
-    margin-top: 20px !important;
-    font-weight: 400;
-    padding: 12px 72px;
-    border-radius: 3px !important;
-}
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-card-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .mat-center {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .mat-image-responsive {
+    max-width: 100%;  /* Ensures the image does not exceed its container's width */
+  height: auto;     /* Automatically adjust the height while maintaining the aspect ratio */
+  display: block;   /* Removes any extra space around the image */
+  margin: 0 auto;   /* Center the image horizontally within its container */
+  max-height: 200px;
+  }
+    /* styles.css */
+.mat-table {
+    max-width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .mat-table th,
+  .mat-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .mat-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .mat-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .mat-container{
+    overflow-x: auto;
+  }

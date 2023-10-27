@@ -1,4 +1,4 @@
-<app-header></app-header>
+<!--<app-header></app-header>
 <ng-container *ngIf="products.length !=0">
     <div class="container">
         <div class="card-table">
@@ -56,4 +56,74 @@
             <button routerLink="/products" class="btn btn-primary">Shop Now</button>
         </div>
     </div>
+</ng-container>-->
+<app-header></app-header>
+<ng-container *ngIf="products.length != 0">
+  <div>  
+  <div class="mat-container">
+    <div class="mat-card-table">
+      <div class="mat-cart-product">
+        <table class="mat-table mat-table-responsive">
+          <thead>
+            <tr>
+              <th>Sr.No</th>
+              <th>Product Name</th>
+              <th>Product Image</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.title }}</td>
+              <td><img class="mat-product-image" [src]="item.image" alt=""></td>
+              <td class="mat-description">{{ item.description }}</td>
+              <td class="mat-price">{{ item.price }}</td>
+              <td class="mat-quantity">{{ item.quantity }}</td>
+              <td class="mat-total">{{ item.total }}</td>
+              <td>
+                <button (click)="removeItem(item)" class="mat-button mat-button-danger">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td>
+                <button (click)="emptyCart()" class="mat-button mat-button-danger">Empty Cart</button>
+              </td>
+              <td>
+                <button routerLink="/products" class="mat-button mat-button-primary">Shop More</button>
+              </td>
+              <td>
+                <button class="mat-button mat-button-success">Checkout</button>
+              </td>
+              <td><strong>Grand Total: INR{{ grandTotal }}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+ <div>
+  <div class="mat-container">
+    <div class="mat-card">
+      <h5 class="mat-card-title">My Cart</h5>
+    </div>
+    <div class="mat-center">
+      <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="" class="mat-image-responsive">
+      <h4>Your cart is empty!</h4>
+      <h6>Add items to it now</h6>
+      <button routerLink="/products" class="mat-button mat-button-primary">Shop Now</button>
+    </div>
+  </div>
+</div>
 </ng-container>

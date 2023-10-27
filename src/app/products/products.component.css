@@ -1,41 +1,121 @@
-.card-top {
-    position: relative;
+/* Common styles */
+.card-container {
     display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: .25rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .example-card {
+    flex-basis: calc(25% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    transition:0.2s ease-out;
+  }
+  .example-card:hover{
+    transform:scale(1.04);
+  }
+  .mat-card-content {
+    padding: 16px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  h3 {
+    margin: 8px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
+  
+  p {
+    margin: 4px 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .des, .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;
+  }
+  .des1{
+    display: inline;
+  }
+  .des2{
+    display: inline;
+    margin-left: 15px;
+  }
+  
+  .but {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: auto;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .font{
+    font-size: 15pt;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 767px) {
+    .example-card {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+  
+  .card-top {
+  background-color:white;
+  padding: 20px 0;
 }
 
-.item img {
-    width: 64px;
+.container.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .item {
-    margin: 0px 15px;
-    text-align: center;
+  flex-basis: auto;
+  text-align: center;
+  margin: 10px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: transform 0.2s;
 }
 
-.item a:hover {
-    color: blue;
+.item:hover {
+  transform: scale(1.05);
 }
 
-.card {
-    padding: 20px;
-    margin: 50px;
-    border-radius:35px;
-    transition: 0.3s ease-in-out;
-}
-.card:hover{
-    transform: scale(1.2);
+.item a {
+  text-decoration: none;
+  color: #333;
 }
 
-.card img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 15px;
-    margin-left: 39px;
+.item h6 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Add responsive styles for small screens */
+@media (max-width: 767px) {
+  .item {
+    flex-basis: calc(50% - 20px);
+  }
 }

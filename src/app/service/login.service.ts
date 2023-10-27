@@ -6,15 +6,14 @@ import { GoogleAuthProvider} from '@angular/fire/auth'
   providedIn: 'root'
 })
 export class LoginService {
-  haveaccess:boolean;
+  haveaccess:boolean = false;
   constructor(private fireauth : AngularFireAuth, private router : Router) { }
   login(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
         this.haveaccess = true;
-        localStorage.setItem('token','true');
-        if(res.user?.emailVerified == true) {  
-          this.router.navigate(['/products']);
-        }
+        console.log(this.haveaccess); 
+        this.router.navigate(['/products']);
+        
     }, err => {
         this.haveaccess= false;
         alert(err.message);
