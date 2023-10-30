@@ -1,0 +1,74 @@
+<app-headercart></app-headercart>
+<div class="courses-detail-main-container">
+    <div class="course-detail-container">
+        <div class="course-details">
+            <div class="course-banner">
+                <div class="course-banner-image-container">
+                    <img [src]="selectedprod.image" class="course-banner-image" alt="Product Image">
+                </div>
+            </div>
+            <div class="course-title">
+                <h1>{{ selectedprod.title }}</h1>
+            </div>
+            <div class="course-info">
+                <div class="course-info-rating"><b>Product Rating: </b>{{ selectedprod.rating.rate }}</div>
+            </div>
+            <div class="course-desc">
+                <p>
+                    Product Description:{{ selectedprod.description }}
+                </p>
+            </div>
+            <div class="course-fake-rewiews-list">
+                <h2>Consumer's Review</h2>
+                <hr>
+                <div class="course-fake-rewiews">
+                    <h3>Mark Stefan</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                        nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+
+                <div class="course-fake-rewiews">
+                    <h3>Josef Stalin</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    </p>
+                </div>
+
+                <div class="course-fake-rewiews">
+                    <h3>Ravi Kumar</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt ut labore et m veniam, quis nostrud exercitation ullamco laboris 
+                        nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+
+                <div class="prev-nect-course">
+                    <button class="prev-btn" [routerLink]="'/products/product/'+ (selectedprod.id - 1)">Previous Product</button>
+                    <button class="next-btn" [routerLink]="'/products/product/'+ (selectedprod.id + 1)">Next Product</button>
+                </div>
+            </div>           
+        </div>
+
+        <div class="course-action-items">
+            <div class="side-bar-banner">
+                <h2>Get Flat 80% Off on this Product.</h2>
+            </div>
+            <div class="course-price-discount">
+                <span style="font-size: 24px; font-weight: bold; color: #222; margin:0px 5px;">${{ selectedprod.price }}</span>
+                <span style="font-size: 18px; font-weight: bold; color: #444; margin:0px 5px;"><s>$3199</s></span>
+                <span style="font-size: 18px; color: #222; margin:0px 5px;">86% OFF</span>
+                <div class="offer-timer">
+                    <p><i class="fa fa-clock-o" aria-hidden="true"></i><b> 1 Day</b> left at this price.</p>
+                </div>
+            </div>
+            <div class="buy-course-div">
+                <button class="but" (click)="addtocartfromdetails(selectedprod)"><mat-icon >shopping_cart"</mat-icon>&nbsp;ADD TO CART</button>
+            </div>
+        </div>
+    </div>    
+</div>

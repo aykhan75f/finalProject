@@ -20,6 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import { ProductdetailComponent } from './products/productdetail/productdetail.component';
+import { HeadercartComponent } from './headercart/headercart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import {MatTableModule} from '@angular/material/table';
     ProductsComponent,
     FilterPipe,
     NotfoundComponent,
-    HoverDirective
+    HoverDirective,
+    ProductdetailComponent,
+    HeadercartComponent
   ],
   imports: [
     BrowserModule,

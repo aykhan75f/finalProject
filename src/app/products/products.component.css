@@ -52,7 +52,6 @@
     display: inline;
     margin-left: 15px;
   }
-  
   .but {
     background-color: #1e90ff;
     color: white;
@@ -65,7 +64,63 @@
     display: block;
     margin: 0 auto;
     text-align: center;
+    font-size: 16px; /* Default font size */
+}
+
+/* Media query for small screens (e.g., mobile) */
+@media (max-width: 576px) {
+    .but {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Media query for medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .but {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}
+
+/* Media query for screens between 769px and 1247px */
+@media (min-width: 769px) and (max-width: 1247px) {
+    .but {
+        width: 70%; /* Adjust the width for this range of screen sizes */
+        padding: 8px 16px; /* Use your preferred padding values */
+        font-size: 16px; /* Use your preferred font size */
+    }
+}
+
+/* Media query for large screens (e.g., desktop) */
+@media (min-width: 1248px) {
+    .but {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1137px) {
+  .but {
+      width: 70%; /* Adjust the width for this range of screen sizes */
+      padding: 8px 16px; /* Use your preferred padding values */
+      font-size: 16px; /* Use your preferred font size */
   }
+}
+/* Media query for small screens (e.g., mobile) */
+@media (max-width: 375px) {
+  .but {
+      width: 100%; /* Adjust the width for smaller screens */
+      padding: 10px 20px; /* Adjust the padding for smaller screens */
+      font-size: 14px; /* Adjust the font size for smaller screens */
+  }
+}
+
+
+
+
   .font{
     font-size: 15pt;
   }

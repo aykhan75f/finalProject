@@ -1,0 +1,72 @@
+/* Styles for the header container */
+.header-container {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Styles for the logo and navigation */
+  .logo {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow this section to grow on smaller screens */
+    margin-right: 20px; /* Adjust spacing between logo and navigation */
+  }
+  
+  .logo i {
+    font-size: 40px;
+  }
+  
+  .logo strong {
+    font-size: 30px;
+  }
+  
+  /* Styles for the search bar */
+  .search-bar input {
+    width: 35vw;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    margin: 10px 0; /* Adjust vertical spacing */
+    font-family: 'Poppins', sans-serif;
+    transition: 0.6s ease out;
+  }
+  .search-bar input:hover{
+    transform: scale(1.02);
+  }
+  
+  /* Styles for the cart button */
+  .cart-button button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    margin-left: 20px; /* Adjust spacing between navigation and cart button */
+  }
+  
+  .cart-button .badge {
+    font-size: 12px;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 767px) {
+    .header-container {
+      padding: 10px; /* Reduce padding on smaller screens */
+    }
+  
+    .search-bar input {
+      font-size: 16px; /* Adjust font size for better readability */
+    }
+  
+    .cart-button button {
+      font-size: 24px; /* Adjust font size for better readability */
+    }
+  }
+  

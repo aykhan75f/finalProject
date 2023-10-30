@@ -34,11 +34,14 @@
             <img [src]="item.image" alt="" >
             <h3 class="title">{{ item.title }}</h3>
             <p class="des">{{ item.description }}</p>
-            <div clas>
+            <div>
             <p class="des1"><strong>Rating:</strong> {{ item.rating.rate }}</p>
             <p class="des2"><strong>     Available: </strong> {{ item.rating.count }}</p>
             </div>
+            <div>
             <p class="font"><strong>Price: </strong> INR {{ item.price }}</p>
+            <button mat-button class ="but" [routerLink]="'/products/product/'+item.id">DETAILS</button>
+        </div>
           </mat-card-content>
           <mat-card-actions>
             <button mat-button class ="but" (click)="addtocart(item)"><mat-icon >shopping_cart"</mat-icon>ADD TO CART</button>
