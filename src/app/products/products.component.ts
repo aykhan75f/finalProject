@@ -13,6 +13,8 @@ export class ProductsComponent implements OnInit{
   public productList : any ;
   public filterCategory : any
   searchKey:string ="";
+  priceSortOrder: 'asc' | 'desc' = 'asc'; // Initial price sort order
+  ratingSortOrder: 'asc' | 'desc' = 'asc';
   constructor(private api : ApiService, private cartService : CartService) { }
 
   ngOnInit(): void {
@@ -44,4 +46,33 @@ export class ProductsComponent implements OnInit{
       }
     })
   }
+  sortProducts(property: string, order: 'asc' | 'desc') {
+    this.filterCategory.sort((a: any, b: any) => {
+        const aValue = this.getNestedPropertyValue(a, property);
+        const bValue = this.getNestedPropertyValue(b, property);
+
+        if (order === 'asc') {
+            return aValue - bValue;
+        } else {
+            return bValue - aValue;
+        }
+    });
+
+    if (property === 'price') {
+        this.priceSortOrder = order;
+    } else if (property === 'rating.rate') {
+        this.ratingSortOrder = order;
+    }
+}
+
+private getNestedPropertyValue(obj: any, path: string): any {
+    const keys = path.split('.');
+    let value = obj;
+
+    for (const key of keys) {
+        value = value[key];
+    }
+
+    return value;
+}
 }

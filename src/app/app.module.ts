@@ -22,6 +22,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import { ProductdetailComponent } from './products/productdetail/productdetail.component';
 import { HeadercartComponent } from './headercart/headercart.component';
+import { StarRatingModule } from 'angular-star-rating';
+import { StarRatingConfigService } from 'angular-star-rating';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,9 +53,13 @@ import { HeadercartComponent } from './headercart/headercart.component';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    StarRatingModule.forRoot(),
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
-  providers: [],
+  providers: [StarRatingConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

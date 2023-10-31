@@ -1,20 +1,17 @@
 <header>
-    <div class="header-container">
-      <div class="logo-search-container">
-        <div class="logo">
+  <div class="header-container">
+      <div class="logo">
           <i class="fas fa-shipping-fast"></i>&nbsp;
           <strong>Flipkart</strong>
-        </div>
       </div>
       <div class="search-bar">
-        <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search Products...">
+          <input type="text" class="form-control" [ngModel]="searchTerm" (ngModelChange)="search($event)" placeholder="Search Products...">
       </div>
       <div class="cart-button">
-        <button routerLink="/cart">
-          <i class="fas fa-cart-plus"></i>
-          <div class="badge bg-danger">{{ totalItem }}</div>
-        </button>
+          <button routerLink="/cart">
+              <i class="fas fa-cart-plus"></i>
+              <div class="badge bg-danger">{{ totalItem }}</div>
+          </button>
       </div>
-    </div>
-  </header>
-  
+  </div>
+</header>
