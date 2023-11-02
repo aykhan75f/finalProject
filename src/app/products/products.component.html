@@ -20,17 +20,59 @@
     </div>
 </div>
 <div>
-    <div>
-        <h3>Sort By:</h3>
-        <button mat-button class="sort-button" (click)="sortProducts('price', 'asc')">Price Low-to-High</button>
-        <button mat-button class="sort-button" (click)="sortProducts('price', 'desc')">Price High-to-Low</button>
-        <button mat-button class="sort-button" (click)="sortProducts('rating.rate', 'desc')">Popularity</button>
+  <div class="buttons">
+    <button mat-button class="sort-button" (click)="showSortButtons = !showSortButtons">Sort By</button>
+    <div *ngIf="showSortButtons" class="sort-options">
+      <button mat-button class="sort-button1" (click)="sortProducts('price', 'asc')">Price Low-to-High</button>
+      <button mat-button class="sort-button1" (click)="sortProducts('price', 'desc')">Price High-to-Low</button>
+      <button mat-button class="sort-button1" (click)="sortProducts('rating.rate', 'desc')">Popularity</button>
     </div>
+    <button mat-button class="sort-button" (click)="showFilterButtons = !showFilterButtons">Filter By</button>
+    <div *ngIf="showFilterButtons" class="filter-options">
+      <div class="filter-section">
+        <h6>Rating:</h6>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyRatingFilter(1, 2)" /> 1-2
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyRatingFilter(2, 3)" /> 2-3
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyRatingFilter(3, 4)" /> 3-4
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyRatingFilter(4, 5)" /> 4-5
+        </label>
+      </div>
+    </div>
+    <div *ngIf="showFilterButtons" class="filter-options">
+      <div class="filter-section">
+        <h6>Price:</h6>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyPriceFilter(5, 10)" /> INR 5-10
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyPriceFilter(10, 50)" /> INR 10-50
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyPriceFilter(50, 100)" /> INR 50-100
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyPriceFilter(100, 200)" /> INR 100-200
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" (change)="applyPriceFilter(400, 1000)" /> INR 400-1000
+        </label>
+      </div>
+    </div>
+  </div>
 </div>
+
+
     <div class="card-container">
       <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
         <mat-card class="example-card">
-          <mat-card-content>
+          <mat-card-content  [routerLink]="'/products/product/'+item.id">
             <img [src]="item.image" alt="" >
             <h3 class="title">{{ item.title }}</h3>
             <p class="des">{{ item.description }}</p>
@@ -40,7 +82,7 @@
             </div>
             <div>
             <p class="font"><strong>Price: </strong> INR {{ item.price }}</p>
-            <button mat-button class ="but" [routerLink]="'/products/product/'+item.id">DETAILS</button>
+            
         </div>
           </mat-card-content>
           <mat-card-actions>

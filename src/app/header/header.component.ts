@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../service/cart.service';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { ChangeDetectionStrategy } from '@angular/compiler';
 
 @Component({
   selector: 'app-header',
+  // providers.
+  // view.encapsulation
+  // ChangeDetectionStrategy
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })

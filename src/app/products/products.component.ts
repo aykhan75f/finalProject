@@ -13,7 +13,11 @@ export class ProductsComponent implements OnInit{
   public productList : any ;
   public filterCategory : any
   searchKey:string ="";
-  priceSortOrder: 'asc' | 'desc' = 'asc'; // Initial price sort order
+ showSortButtons: boolean = false;
+ showFilterButtons: boolean = false;
+ selectedRatingFilters: number[] = [];
+selectedPriceFilters: { min: number; max: number }[] = [];
+  priceSortOrder: 'asc' | 'desc' = 'asc';
   ratingSortOrder: 'asc' | 'desc' = 'asc';
   constructor(private api : ApiService, private cartService : CartService) { }
 
@@ -49,6 +53,7 @@ export class ProductsComponent implements OnInit{
   sortProducts(property: string, order: 'asc' | 'desc') {
     this.filterCategory.sort((a: any, b: any) => {
         const aValue = this.getNestedPropertyValue(a, property);
+        console.log(aValue);
         const bValue = this.getNestedPropertyValue(b, property);
 
         if (order === 'asc') {
@@ -60,6 +65,7 @@ export class ProductsComponent implements OnInit{
 
     if (property === 'price') {
         this.priceSortOrder = order;
+
     } else if (property === 'rating.rate') {
         this.ratingSortOrder = order;
     }
@@ -67,6 +73,7 @@ export class ProductsComponent implements OnInit{
 
 private getNestedPropertyValue(obj: any, path: string): any {
     const keys = path.split('.');
+    console.log(keys);
     let value = obj;
 
     for (const key of keys) {
@@ -75,4 +82,57 @@ private getNestedPropertyValue(obj: any, path: string): any {
 
     return value;
 }
+applyRatingFilter(min: number) {
+  if (this.selectedRatingFilters.includes(min)) {
+      this.selectedRatingFilters = this.selectedRatingFilters.filter((val) => val !== min);
+  } else {
+      this.selectedRatingFilters.push(min);
+  }
+
+  this.filterProducts();
+}
+
+
+applyPriceFilter(min: number, max: number) {
+  const filter = { min, max };
+
+  if (this.isPriceFilterSelected(filter)) {
+    this.selectedPriceFilters = this.selectedPriceFilters.filter((val) => val.min !== filter.min || val.max !== filter.max);
+  } else {
+    this.selectedPriceFilters.push(filter);
+  }
+
+  this.filterProducts();
+}
+
+filterProducts() {
+  let filteredProducts = this.productList;
+
+  if (this.selectedRatingFilters.length > 0) {
+    filteredProducts = filteredProducts.filter((product: any) => {
+      return this.selectedRatingFilters.includes(Math.floor(product.rating.rate));
+    });
+  }
+
+  if (this.selectedPriceFilters.length > 0) {
+    filteredProducts = filteredProducts.filter((product: any) => {
+      // Check if the product price is within any of the selected price filters
+      return this.selectedPriceFilters.some(filter => product.price >= filter.min && product.price <= filter.max);
+    });
+  }
+
+  if (this.selectedRatingFilters.length === 0 && this.selectedPriceFilters.length === 0) {
+    // No filters selected, show all products
+    this.filterCategory = this.productList;
+  } else {
+    this.filterCategory = filteredProducts;
+  }
+}
+
+isPriceFilterSelected(filter: { min: number; max: number }): boolean {
+  return this.selectedPriceFilters.some((f) => f.min === filter.min && f.max === filter.max);
+}
+
+
+
 }

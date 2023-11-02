@@ -1,4 +1,4 @@
-/* Common styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -50,13 +50,13 @@
   }
   .des2{
     display: inline;
-    margin-left: 15px;
+    float: right;
   }
   .but {
-    background-color: #1e90ff;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 19px;
     width: auto;
     padding: 8px 16px;
     cursor: pointer;
@@ -64,7 +64,9 @@
     display: block;
     margin: 0 auto;
     text-align: center;
-    font-size: 16px; /* Default font size */
+    font-size: 14px; /* Default font size */
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 /* Media query for small screens (e.g., mobile) */
@@ -81,7 +83,7 @@
     .but {
         width: auto;
         padding: 8px 16px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -90,7 +92,7 @@
     .but {
         width: 70%; /* Adjust the width for this range of screen sizes */
         padding: 8px 16px; /* Use your preferred padding values */
-        font-size: 16px; /* Use your preferred font size */
+        font-size: 14px; /* Use your preferred font size */
     }
 }
 
@@ -99,14 +101,14 @@
     .but {
         width: auto;
         padding: 8px 16px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 @media (min-width: 769px) and (max-width: 1137px) {
   .but {
       width: 70%; /* Adjust the width for this range of screen sizes */
       padding: 8px 16px; /* Use your preferred padding values */
-      font-size: 16px; /* Use your preferred font size */
+      font-size: 14px; /* Use your preferred font size */
   }
 }
 /* Media query for small screens (e.g., mobile) */
@@ -123,6 +125,8 @@
 
   .font{
     font-size: 15pt;
+    margin-top:10px;
+    margin-bottom: 8px;
   }
   
   /* Responsive styles for smaller screens */
@@ -180,4 +184,171 @@
 .container h6{
   justify-content: center;
   margin-left: 45px;
+}
+/* Media query for small screens (e.g., mobile) */
+@media (max-width: 576px) {
+  .sort-button {
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 14px;
+  }
+}
+
+/* Media query for medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .sort-button {
+      width: auto;
+      padding: 8px 16px;
+      font-size: 16px;
+  }
+}
+
+/* Media query for large screens (e.g., desktop) */
+@media (min-width: 769px) {
+  .sort-button {
+      width: auto;
+      padding: 8px 16px;
+      font-size: 16px;
+  }
+}
+/* Common styles for all screen sizes */
+
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.filter-section h6 {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.filter-section label {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filter-section input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.filter-section input[type="checkbox"]:checked + label {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Responsive styles for small screens (e.g., mobile) */
+@media (max-width: 576px) {
+  .filter-section {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .filter-section h6 {
+      margin-bottom: 5px;
+  }
+
+  .filter-section label {
+      margin-bottom: 5px;
+  }
+}
+
+/* Responsive styles for medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .filter-section h6 {
+      font-size: 14px;
+      margin-right: 8px;
+  }
+
+  .filter-section label {
+      font-size: 14px;
+      margin-right: 8px;
+  }
+}
+
+/* Responsive styles for large screens (e.g., desktop) */
+@media (min-width: 769px) {
+  .filter-section h6 {
+      font-size: 16px;
+      margin-right: 10px;
+  }
+
+  .filter-section label {
+      font-size: 16px;
+      margin-right: 10px;
+  }
+}
+.buttons{
+  margin-bottom: 10px;
+}
+/* Style for sort and filter buttons */
+.sort-button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+.sort-button1 {
+  margin: 5px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.checkbox-label {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 5px;
+  appearance: none;
+  border: 1px solid #999;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.checkbox-label input[type="checkbox"]:checked + label {
+  color: #fff;
+}
+
+.checkbox-label input[type="checkbox"] {
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox-label input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.filter-section h6{
+  margin-left: 5px;
+  margin-top: 9px;
 }
