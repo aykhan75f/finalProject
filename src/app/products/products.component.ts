@@ -3,10 +3,11 @@ import { CartService } from '../service/cart.service';
 import { ApiService } from '../service/api.service';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
+  templateUrl: 'products.component.html',
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit{
@@ -19,7 +20,7 @@ export class ProductsComponent implements OnInit{
 selectedPriceFilters: { min: number; max: number }[] = [];
   priceSortOrder: 'asc' | 'desc' = 'asc';
   ratingSortOrder: 'asc' | 'desc' = 'asc';
-  constructor(private api : ApiService, private cartService : CartService) { }
+  constructor(private api : ApiService, private cartService : CartService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.api.getProduct()
@@ -41,6 +42,7 @@ selectedPriceFilters: { min: number; max: number }[] = [];
   }
   addtocart(item: any){
     this.cartService.addtoCart(item);
+    this.showSuccess()
   }
   filter(category:string){
     this.filterCategory = this.productList
@@ -49,6 +51,9 @@ selectedPriceFilters: { min: number; max: number }[] = [];
         return a;
       }
     })
+  }
+  showSuccess() {
+    this.toastr.info('Item added to cart');
   }
   sortProducts(property: string, order: 'asc' | 'desc') {
     this.filterCategory.sort((a: any, b: any) => {
@@ -107,7 +112,6 @@ applyPriceFilter(min: number, max: number) {
 
 filterProducts() {
   let filteredProducts = this.productList;
-
   if (this.selectedRatingFilters.length > 0) {
     filteredProducts = filteredProducts.filter((product: any) => {
       return this.selectedRatingFilters.includes(Math.floor(product.rating.rate));

@@ -27,7 +27,7 @@ import { StarRatingConfigService } from 'angular-star-rating';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +57,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     StarRatingModule.forRoot(),
     MatInputModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ToastNoAnimationModule.forRoot(),
+    ToastrModule.forRoot(),
   ],
   providers: [StarRatingConfigService],
   bootstrap: [AppComponent]

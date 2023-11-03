@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"cart", component: CartComponent,canActivate:[authguardGuard]},
   {path:"notfound",component:NotfoundComponent},
   {path:"products/product/:id",component:ProductdetailComponent,canActivate:[authguardGuard]},
-  {path:'**',component:NotfoundComponent}
+  {path:'**',component:NotfoundComponent},
 ];
 
 @NgModule({
