@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 import { products } from '../products.class';
 import { CartService } from 'src/app/service/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-productdetail',
@@ -14,7 +15,7 @@ export class ProductdetailComponent {
   productList: products[];
   selectedprod: products = new products();
 
-  constructor(private apiser: ApiService, private activeRoute: ActivatedRoute,private cartService:CartService) {}
+  constructor(private apiser: ApiService, private activeRoute: ActivatedRoute,private cartService:CartService,private toastr: ToastrService) {}
 
   ngOnInit() {
     this.apiser.getProduct().subscribe((res: products[]) => {
@@ -34,7 +35,11 @@ export class ProductdetailComponent {
       });
     });
   }
+  showmessage(){
+    this.toastr.info("Item added to cart");
+  }
   addtocartfromdetails(selectedprod:products){
     this.cartService.addtoCart(selectedprod);
+    this.showmessage();
   }
 }
