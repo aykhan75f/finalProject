@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
+import { PiDirective } from './pi.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toas
     NotfoundComponent,
     HoverDirective,
     ProductdetailComponent,
-    HeadercartComponent
+    HeadercartComponent,
+    PiDirective
   ],
   imports: [
     BrowserModule,
