@@ -11,6 +11,7 @@
           <button routerLink="/cart">
               <i class="fas fa-cart-plus"></i>
               <div class="badge bg-danger">{{ totalItem }}</div>
+              <button *ngIf="loggedIn()" (click)="logout()"><mat-icon >logout</mat-icon></button>
           </button>
       </div>
   </div>

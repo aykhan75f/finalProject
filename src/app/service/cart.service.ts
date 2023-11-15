@@ -16,7 +16,7 @@ export class CartService {
   }
 
   setProduct(product : any){
-    this.cartItemList.push(...product);
+    this.cartItemList.push(product);
     this.productList.next(product);
   }
   addtoCart(product : any){

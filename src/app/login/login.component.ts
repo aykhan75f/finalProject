@@ -4,6 +4,7 @@ import { CustomValidators } from '../Validators/noSpaceAllowed.Validator';
 import { matchpassword } from '../Validators/matchpassword.validator';
 import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',

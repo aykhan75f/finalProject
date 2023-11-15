@@ -7,9 +7,10 @@ import { ProductsComponent } from './products/products.component';
 import { authguardGuard } from './auth/authguard.guard';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductdetailComponent } from './products/productdetail/productdetail.component';
+import { loggedinguardGuard } from './auth/loggedinguard.guard';
 
 const routes: Routes = [
-  {path:"signup",component:SignupComponent},
+  {path:"signup",component:SignupComponent,canActivate:[loggedinguardGuard]},
   {path:"login",component:LoginComponent},
   {path:'', redirectTo:'login',pathMatch:'full'},
   {path:"products", component:ProductsComponent,canActivate:[authguardGuard]},

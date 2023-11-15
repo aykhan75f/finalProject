@@ -21,30 +21,30 @@
 </div>
 <div>
   <div class="buttons">
-    <button mat-button class="sort-button" (click)="showSortButtons = !showSortButtons">Sort By</button>
+    <button mat-button class="sort-button" (click)="showSortButtons = !showSortButtons">Sort By<mat-icon >sort</mat-icon></button>
     <div *ngIf="showSortButtons" class="sort-options">
       <button mat-button class="sort-button1" (click)="sortProducts('price', 'asc')">Price Low-to-High</button>
       <button mat-button class="sort-button1" (click)="sortProducts('price', 'desc')">Price High-to-Low</button>
       <button mat-button class="sort-button1" (click)="sortProducts('rating.rate', 'desc')">Popularity</button>
     </div>
-    <button mat-button class="sort-button" (click)="showFilterButtons = !showFilterButtons">Filter By</button>
+    <button mat-button class="sort-button" (click)="showFilterButtons = !showFilterButtons">Filter By<mat-icon >filter_alt</mat-icon></button>
     <div *ngIf="showFilterButtons" class="filter-options">
       <div class="filter-section">
         <h6>Rating:</h6>
         <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(1, 2)" /> 1-2
+          <input type="checkbox" (change)="applyRatingFilter(1)" /> 1-2
         </label>
         <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(2, 3)" /> 2-3
+          <input type="checkbox" (change)="applyRatingFilter(2)" /> 2-3
         </label>
         <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(3, 4)" /> 3-4
+          <input type="checkbox" (change)="applyRatingFilter(3)" /> 3-4
         </label>
         <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(4, 5)" /> 4-5
+          <input type="checkbox" (change)="applyRatingFilter(4)" /> 4-5
         </label>
       </div>
-    </div>
+    </div>                       
     <div *ngIf="showFilterButtons" class="filter-options">
       <div class="filter-section">
         <h6>Price:</h6>

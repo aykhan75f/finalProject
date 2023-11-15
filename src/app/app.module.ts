@@ -28,7 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
-import { PiDirective } from './pi.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,12 +41,10 @@ import { PiDirective } from './pi.directive';
     NotfoundComponent,
     HoverDirective,
     ProductdetailComponent,
-    HeadercartComponent,
-    PiDirective
+    HeadercartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
@@ -62,6 +60,7 @@ import { PiDirective } from './pi.directive';
     MatFormFieldModule,
     ToastNoAnimationModule.forRoot(),
     ToastrModule.forRoot(),
+    AppRoutingModule,
   ],
   providers: [StarRatingConfigService],
   bootstrap: [AppComponent]

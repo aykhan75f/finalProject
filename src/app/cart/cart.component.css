@@ -1,4 +1,3 @@
-/* styles.css */
 .mat-product-image {
     width: 120px;
   }
@@ -67,7 +66,6 @@
   margin: 0 auto;   /* Center the image horizontally within its container */
   max-height: 200px;
   }
-    /* styles.css */
 .mat-table {
     max-width: 100%;
     border-collapse: collapse;

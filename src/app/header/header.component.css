@@ -68,6 +68,8 @@
 
 /* Styles for the cart button */
 .cart-button button {
+  display: flex; /* Add display:flex to make its children align horizontally */
+  align-items: center; /* Center the children vertically */
   background-color: transparent;
   border: none;
   font-size: 20px;
@@ -75,6 +77,13 @@
   margin-left: 20px; /* Adjust spacing between navigation and cart button */
 }
 
-.cart-button .badge {
-  font-size: 9px;
+/* Styles for the badge */
+.cart-button .badge.bg-danger {
+  font-size: 8px; 
 }
+
+/* Styles for the logout button inside the cart button */
+.cart-button button {
+  margin-left: 5px; /* Adjust spacing between cart icon and logout icon */
+}
+

@@ -126,7 +126,7 @@ filterProducts() {
   }
 
   if (this.selectedRatingFilters.length === 0 && this.selectedPriceFilters.length === 0) {
-    // No filters selected, show all products
+    // No filters selected then show all products
     this.filterCategory = this.productList;
   } else {
     this.filterCategory = filteredProducts;
