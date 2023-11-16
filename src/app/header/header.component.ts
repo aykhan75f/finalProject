@@ -5,6 +5,8 @@ import { LoginService } from '../service/login.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+
 @Component({
   selector: 'app-header',
   // providers.
@@ -17,6 +19,8 @@ export class HeaderComponent implements OnInit {
   public totalItem: number = 0;
   public searchTerm!: string;
   public haveaccess:boolean = true;
+  public productList : any ;
+  filteredOptions: any[] = [];
 
   constructor(private cartService: CartService,private loginservice:LoginService,private fireauth:AngularFireAuth,private router : Router,private toastr: ToastrService) { }
 
@@ -37,6 +41,22 @@ export class HeaderComponent implements OnInit {
   search(searchTerm: string) {
     this.cartService.search.next(searchTerm);
   }
+    filterProducts() {
+        // Logic to filter products based on the searchTerm
+        this.filteredOptions = this.productList.filter(product =>
+            product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+        );
+    }
+
+    displayFn(product: any): string {
+        return product && product.title ? product.title : '';
+    }
+
+    onSelect(event: MatAutocompleteSelectedEvent) {
+        // Handle the selection of an autocomplete option
+        this.searchTerm = event.option.viewValue;
+        this.search(this.searchTerm);
+    }
   loggedIn(){
     if (this.haveaccess)
     {
@@ -51,7 +71,7 @@ export class HeaderComponent implements OnInit {
     var a = confirm("Are you sure you want you log Out!!!");
     if (a){
       this.fireauth.signOut().then(() => {
-        sessionStorage.removeItem('token');
+        sessionStorage.setItem('isLoggedIn','false');;
         this.router.navigate(['/login']);
         this.showsuccess();
       }).catch((error) => {

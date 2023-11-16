@@ -29,42 +29,22 @@
     </div>
     <button mat-button class="sort-button" (click)="showFilterButtons = !showFilterButtons">Filter By<mat-icon >filter_alt</mat-icon></button>
     <div *ngIf="showFilterButtons" class="filter-options">
-      <div class="filter-section">
-        <h6>Rating:</h6>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(1)" /> 1-2
-        </label>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(2)" /> 2-3
-        </label>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(3)" /> 3-4
-        </label>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyRatingFilter(4)" /> 4-5
-        </label>
-      </div>
-    </div>                       
+  <div class="filter-section">
+    <h6>Rating:</h6>
+    <label class="checkbox-label" *ngFor="let rating of [1, 2, 3, 4]">
+      <input type="checkbox" (change)="applyRatingFilter(rating)" /> {{ rating }}-{{ rating + 1 }}
+    </label>
+  </div>
+</div>
+                     
     <div *ngIf="showFilterButtons" class="filter-options">
       <div class="filter-section">
         <h6>Price:</h6>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyPriceFilter(5, 10)" /> INR 5-10
-        </label>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyPriceFilter(10, 50)" /> INR 10-50
-        </label>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyPriceFilter(50, 100)" /> INR 50-100
-        </label>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyPriceFilter(100, 200)" /> INR 100-200
-        </label>
-        <label class="checkbox-label">
-          <input type="checkbox" (change)="applyPriceFilter(400, 1000)" /> INR 400-1000
+        <label class="checkbox-label" *ngFor="let range of priceRanges">
+          <input type="checkbox" (change)="applyPriceFilter(range.min, range.max)" /> {{ range.label }}
         </label>
       </div>
-    </div>
+    </div>    
   </div>
 </div>
 

@@ -20,6 +20,13 @@ export class ProductsComponent implements OnInit{
 selectedPriceFilters: { min: number; max: number }[] = [];
   priceSortOrder: 'asc' | 'desc' = 'asc';
   ratingSortOrder: 'asc' | 'desc' = 'asc';
+  priceRanges = [
+    { min: 5, max: 10, label: 'INR 5-10' },
+    { min: 10, max: 50, label: 'INR 10-50' },
+    { min: 50, max: 100, label: 'INR 50-100' },
+    { min: 100, max: 200, label: 'INR 100-200' },
+    { min: 400, max: 1000, label: 'INR 400-1000' }
+  ];
   constructor(private api : ApiService, private cartService : CartService,private toastr: ToastrService) { }
 
   ngOnInit(): void {

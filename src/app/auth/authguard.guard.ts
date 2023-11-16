@@ -5,7 +5,7 @@ import { LoginService } from '../service/login.service';
 export const authguardGuard: CanActivateFn = (route, state) => {
   const log = inject(LoginService);
   const router = inject(Router);
-  if (sessionStorage.getItem('token')!=null){
+  if (sessionStorage.getItem('isLoggedIn') == 'true'){
     return true;
   }
   else{

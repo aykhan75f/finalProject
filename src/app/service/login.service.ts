@@ -15,28 +15,18 @@ export class LoginService {
         console.log(this.haveaccess); 
         this.showsuccess();
         this.router.navigate(['/products']);
-        sessionStorage.setItem('token',JSON.stringify(res.user?.uid));
+        sessionStorage.setItem('isLoggedIn','true');
     }, err => {
         this.haveaccess= false;
         alert(err.message);
         this.router.navigate(['/login']);    
     })
   }
-  
-  loggedIn(){
-    if (this.haveaccess)
-    {
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
   googleSignIn() {
     return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
       this.haveaccess = true;
       this.router.navigate(['/products']);
-      sessionStorage.setItem('token',JSON.stringify(res.user?.uid));
+      sessionStorage.setItem('isLoggedIn','true');
 
     }, err => {
       alert(err.message);
