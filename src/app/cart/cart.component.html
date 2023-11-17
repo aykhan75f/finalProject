@@ -28,14 +28,19 @@
               <td class="mat-total">{{ item.total }}</td>
               <td>
                 <button (click)="removeItem(item)" class="mat-button mat-button-danger">
-                  <mat-icon>delete</mat-icon>
+                  <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+                  <lord-icon
+                    src="https://cdn.lordicon.com/wpyrrmcq.json"
+                    trigger="hover"
+                    style="width:25px;height:25px">
+                  </lord-icon>
                 </button>
               </td>
             </tr>
             <tr>
               <td colspan="5"></td>
               <td>
-                <button (click)="emptycart()" class="mat-button mat-button-danger">Empty Cart</button>
+                <button (click)="emptycart()" class="mat-button mat-button-danger1">Empty Cart</button>
               </td>
               <td>
                 <button routerLink="/products" class="mat-button mat-button-primary">Shop More</button>

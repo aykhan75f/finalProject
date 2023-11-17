@@ -1,78 +1,182 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content:normal;
+    justify-content: normal;
     gap: 20px;
-  }
-  
-  .example-card {
+}
+
+.example-card {
     flex-basis: calc(25% - 20px);
     box-sizing: border-box;
     border: 1px solid #e0e0e0;
     border-radius: 25px;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
-    transition:0.2s ease-out;
-  }
-  .example-card:hover{
-    transform:scale(1.04);
-  }
-  .mat-card-content {
+    transition: 0.2s ease-out;
+}
+
+.example-card:hover {
+    transform: scale(1.04);
+}
+
+.mat-card-content {
     padding: 16px;
     font-family: 'Poppins', sans-serif;
-  }
-  
-  img {
+}
+
+img {
     width: 100%;
     height: 300px;
-  }
-  
-  h3 {
+}
+
+h3 {
     margin: 8px 0;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-  }
-  
-  p {
+}
+
+p {
     margin: 4px 0;
     font-family: 'Poppins', sans-serif;
-  }
-  
-  .des, .title {
+}
+
+.des, .title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100ch;
-  }
-  .des1{
+}
+
+.des1 {
     display: inline;
-  }
-  .des2{
+}
+
+.des2 {
     display: inline;
     float: right;
-  }
-  .but {
+}
+
+.but {
     background-color: #007bff;
     color: white;
     border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border-radius: 19px;
     width: auto;
-    padding: 8px 16px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: ease-out 0.3s;
     display: block;
     margin: 0 auto;
     text-align: center;
     font-size: 14px; /* Default font size */
     font-family: 'Poppins', sans-serif;
-    
+}
+.but:hover{
+  transform:scale(1.05);
 }
 
 /* Media query for small screens (e.g., mobile) */
 @media (max-width: 576px) {
     .but {
+        width: 100%;
+        padding: 8px 10px; /* Adjusted padding for smaller screens */
+        font-size: 7px; /* Adjusted font size for smaller screens */
+    }
+
+    .example-card {
+        flex-basis: calc(50% - 30px);
+    }
+}
+
+/* Media query for medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .but {
+        width: 70%;
+        padding: 8px 12px;
+        font-size: 8px;
+    }
+}
+
+/* Media query for screens between 769px and 1137px */
+@media (min-width: 769px) and (max-width: 1137px) {
+    .but {
+        width: 70%;
+        padding: 8px 14px;
+        font-size: 9px;
+    }
+}
+
+/* Media query for large screens (e.g., desktop) */
+@media (min-width: 1138px) and (max-width: 1247px) {
+    .but {
+        width: 70%;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Media query for extra-large screens (e.g., larger desktops) */
+@media (min-width: 1248px) {
+    .but {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 12px; /* Adjusted font size for larger screens */
+    }
+}
+
+.container.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    text-align: center;
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: transform 0.2s;
+    height: 150px; /* Set a fixed height in pixels */
+    width: 150px; /* Set a fixed width in pixels */
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.text {
+    font-size: 16px;
+    margin: 10px 0;
+    align-items: center;
+}
+
+/* Add responsive styles for small screens */
+@media (max-width: 767px) {
+    .item {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+.container h6 {
+    justify-content: center;
+    margin-left: 45px;
+}
+
+/* Media query for small screens (e.g., mobile) */
+@media (max-width: 576px) {
+    .sort-button {
         width: 100%;
         padding: 10px 20px;
         font-size: 14px;
@@ -81,282 +185,193 @@
 
 /* Media query for medium screens (e.g., tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
-    .but {
+    .sort-button {
         width: auto;
         padding: 8px 16px;
-        font-size: 14px;
+        font-size: 16px;
     }
-}
-
-/* Media query for screens between 769px and 1247px */
-@media (min-width: 769px) and (max-width: 1247px) {
-    .but {
-        width: 70%; /* Adjust the width for this range of screen sizes */
-        padding: 8px 16px; /* Use your preferred padding values */
-        font-size: 14px; /* Use your preferred font size */
-    }
-}
-
-/* Media query for large screens (e.g., desktop) */
-@media (min-width: 1248px) {
-    .but {
-        width: auto;
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-}
-@media (min-width: 769px) and (max-width: 1137px) {
-  .but {
-      width: 70%; /* Adjust the width for this range of screen sizes */
-      padding: 8px 16px; /* Use your preferred padding values */
-      font-size: 14px; /* Use your preferred font size */
-  }
-}
-/* Media query for small screens (e.g., mobile) */
-@media (max-width: 375px) {
-  .but {
-      width: 100%; /* Adjust the width for smaller screens */
-      padding: 10px 20px; /* Adjust the padding for smaller screens */
-      font-size: 14px; /* Adjust the font size for smaller screens */
-  }
-}
-
-
-
-
-  .font{
-    font-size: 15pt;
-    margin-top:10px;
-    margin-bottom: 8px;
-  }
-  
-  /* Responsive styles for smaller screens */
-  @media (max-width: 767px) {
-    .example-card {
-      flex-basis: calc(50% - 20px);
-    }
-  }
-  
-  .card-top {
-  background-color:white;
-  padding: 20px 0;
-}
-
-.container.d-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.item {
-  text-align: center;
-  margin: 10px;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  transition: transform 0.2s;
-  height: 150px; /* Set a fixed height in pixels */
-  width: 150px; /* Set a fixed width in pixels */
-}
-
-.item:hover {
-  transform: scale(1.05);
-}
-
-.item a {
-  text-decoration: none;
-  color: #333;
-}
-
-.text{
-  font-size: 16px;
-  margin: 10px 0;
-  align-items: center;
-}
-
-/* Add responsive styles for small screens */
-@media (max-width: 767px) {
-  .item {
-    flex-basis: calc(50% - 20px);
-  }
-}
-
-.container h6{
-  justify-content: center;
-  margin-left: 45px;
-}
-/* Media query for small screens (e.g., mobile) */
-@media (max-width: 576px) {
-  .sort-button {
-      width: 100%;
-      padding: 10px 20px;
-      font-size: 14px;
-  }
-}
-
-/* Media query for medium screens (e.g., tablets) */
-@media (min-width: 577px) and (max-width: 768px) {
-  .sort-button {
-      width: auto;
-      padding: 8px 16px;
-      font-size: 16px;
-  }
 }
 
 /* Media query for large screens (e.g., desktop) */
 @media (min-width: 769px) {
-  .sort-button {
-      width: auto;
-      padding: 8px 16px;
-      font-size: 16px;
-  }
+    .sort-button {
+        width: auto;
+        padding: 8px 16px;
+        font-size: 16px;
+    }
 }
+
 /* Common styles for all screen sizes */
 
 .filter-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .filter-section h6 {
-  font-weight: bold;
-  margin-right: 10px;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
 .filter-section label {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .filter-section input[type="checkbox"] {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 .filter-section input[type="checkbox"]:checked + label {
-  color: #007bff;
-  font-weight: bold;
+    color: #007bff;
+    font-weight: bold;
 }
 
 /* Responsive styles for small screens (e.g., mobile) */
 @media (max-width: 576px) {
-  .filter-section {
-      flex-direction: column;
-      align-items: flex-start;
-  }
+    .filter-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .filter-section h6 {
-      margin-bottom: 5px;
-  }
+    .filter-section h6 {
+        margin-bottom: 5px;
+    }
 
-  .filter-section label {
-      margin-bottom: 5px;
+    .filter-section label {
+        margin-bottom: 5px;
+    }
+}
+
+/* Responsive styles for medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .filter-section h6 {
+        font-size: 8px;
+        margin-right: 8px;
+    }
+
+    .filter-section label {
+        font-size: 8px;
+        margin-right: 8px;
+    }
+}
+
+/* Responsive styles for large screens (e.g., desktop) */
+@media (min-width: 769px) {
+    .filter-section h6 {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .filter-section label {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+
+.buttons {
+    margin-bottom: 10px;
+}
+
+/* Style for sort and filter buttons */
+.sort-button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sort-button1 {
+    margin: 5px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sort-button1.selected {
+    transform: scale(1.1);
+    border: 2px solid black;
+}
+
+.checkbox-label {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 5px;
+    appearance: none;
+    border: 1px solid #999;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.checkbox-label input[type="checkbox"]:checked + label {
+    color: #fff;
+}
+
+.checkbox-label input[type="checkbox"] {
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox-label input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.filter-section h6 {
+    margin-left: 5px;
+    margin-top: 9px;
+}
+/* Style for the icon within the .but class */
+.but .icon {
+  margin-right: 5px; /* Adjust spacing between icon and text */
+}
+
+/* Responsive styles for small screens (e.g., mobile) */
+@media (max-width: 576px) {
+  .but .icon {
+      size: 2px; /* Hide the icon on small screens */
   }
 }
 
 /* Responsive styles for medium screens (e.g., tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
-  .filter-section h6 {
-      font-size: 14px;
-      margin-right: 8px;
-  }
-
-  .filter-section label {
-      font-size: 14px;
-      margin-right: 8px;
+  .but .icon {
+      margin-right: 8px; /* Adjust spacing for medium screens */
   }
 }
 
 /* Responsive styles for large screens (e.g., desktop) */
-@media (min-width: 769px) {
-  .filter-section h6 {
-      font-size: 16px;
-      margin-right: 10px;
+@media (min-width: 769px)and (max-width: 950px) {
+  .but .icon {
+      margin-right: 10px; /* Adjust spacing for large screens */
   }
-
-  .filter-section label {
-      font-size: 16px;
-      margin-right: 10px;
-  }
-}
-.buttons{
-  margin-bottom: 10px;
-}
-/* Style for sort and filter buttons */
-.sort-button {
-  margin: 5px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  font-family: 'Poppins', sans-serif;
-}
-.sort-button1 {
-  margin: 5px;
-  padding: 10px 20px;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  font-family: 'Poppins', sans-serif;
-}
-
-.sort-button1.selected {
-  transform: scale(1.1);
-  border: 2px solid black;
-}
-
-
-
-
-.checkbox-label {
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-}
-
-.checkbox-label input[type="checkbox"] {
-  margin-right: 5px;
-  appearance: none;
-  border: 1px solid #999;
-  width: 16px;
-  height: 16px;
-  border-radius: 3px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.checkbox-label input[type="checkbox"]:checked {
-  background-color: #007bff;
-  border: 1px solid #007bff;
-}
-
-.checkbox-label input[type="checkbox"]:checked + label {
-  color: #fff;
-}
-
-.checkbox-label input[type="checkbox"] {
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-.checkbox-label input[type="checkbox"] {
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-}
-.filter-section h6{
-  margin-left: 5px;
-  margin-top: 9px;
 }

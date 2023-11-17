@@ -59,15 +59,24 @@
   transform: scale(1.02);
 }
 
-/* Styles for the cart button */
 .cart-button button {
+  position:relative;
+  left:2px;
+  right:-1px;
+  display: flex; /* Add display:flex to make its children align horizontally */
+  align-items: center; /* Center the children vertically */
   background-color: transparent;
   border: none;
   font-size: 20px;
   color: white;
-  margin-left: 20px; /* Adjust spacing between navigation and cart button */
+  margin-left: 1px; /* Adjust spacing between navigation and cart button */
 }
 
-.cart-button .badge {
-  font-size: 9px;
+/* Styles for the badge */
+.badge.bg-danger {
+  position:relative;
+  font-size: 8px; 
+  top: 10px;
+  left:-6px;
+
 }

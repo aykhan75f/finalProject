@@ -8,11 +8,21 @@
           <input type="text" class="form-control" [ngModel]="searchTerm" (ngModelChange)="search($event)" placeholder="Search Products...">
       </div>
       <div class="cart-button">
-          <button routerLink="/cart">
-              <i class="fas fa-cart-plus"></i>
-              <div class="badge bg-danger">{{ totalItem }}</div>
-              <button *ngIf="loggedIn()" (click)="logout()"><mat-icon >logout</mat-icon></button>
-          </button>
-      </div>
+        <button routerLink="/cart">
+            <div class="cart-button">
+                <button routerLink="/cart">
+                  <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+                  <lord-icon
+                    src="https://cdn.lordicon.com/mfmkufkr.json"
+                    trigger="hover"
+                    colors="primary:#ffffff"
+                    style="width:35px;height:35px">
+                  </lord-icon>
+                  <div class="badge bg-danger">{{ totalItem }}</div>
+                  <button *ngIf="loggedIn()" (click)="logout()" class="logout-button"><mat-icon>logout</mat-icon></button>
+                </button>
+              </div>
+        </button>
+    </div>
   </div>
 </header>

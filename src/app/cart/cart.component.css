@@ -20,14 +20,15 @@
   
   .mat-button {
     margin: 0;
-    padding: 6px 16px;
+    padding: 6px 10px;
     font-size: 14px;
     border-radius: 20px;
   }
   
-  .mat-button-danger {
-    background-color: #dc3545;
+  
+  .mat-button-danger1 {
     color: #fff;
+    background-color: lightcoral;
     border-radius: 20px;
   }
   

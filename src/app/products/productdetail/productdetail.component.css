@@ -91,6 +91,8 @@ hr{
 }
 .course-price-discount{
     padding: 15px 20px;
+    white-space: nowrap;
+    text-wrap: wrap;
 }
 .offer-timer{
     color:dodgerblue;
@@ -224,5 +226,86 @@ hr{
 .course-fake-rewiews-name h3 {
     margin: 0; /* Reset margin to avoid extra space above the name */
 }
+/* Common styles for all screen sizes */
+.course-price-discount {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
+.course-price-discount span {
+    font-size: 18px;
+    margin: 0px 5px;
+}
+
+/* Responsive styles for small screens (e.g., mobile) */
+@media (max-width: 576px) {
+    .course-price-discount span {
+        font-size: 14px; /* Adjust font size for small screens */
+        margin: 0px 3px; /* Adjust margin for small screens */
+    }
+}
+
+/* Responsive styles for medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .course-price-discount span {
+        font-size: 16px; /* Adjust font size for medium screens */
+        margin: 0px 4px; /* Adjust margin for medium screens */
+    }
+}
+
+/* Responsive styles for large screens (e.g., desktop) */
+@media (min-width: 769px) {
+    .course-price-discount span {
+        font-size: 20px; /* Adjust font size for large screens */
+        margin: 0px 6px; /* Adjust margin for large screens */
+    }
+}
+
+/* Additional styles for the offer-timer */
+.offer-timer {
+    margin-top: 10px; /* Add margin to separate from the price section */
+}
+
+.offer-timer p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.offer-timer i {
+    margin-right: 5px;
+}
+
+/* Add this to your existing stylesheet or create a new stylesheet */
+.responsive-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    margin: 0px 5px;
+}
+
+/* Responsive styles for small screens (e.g., mobile) */
+@media (max-width: 576px) {
+    .responsive-price {
+        font-size: 16px; /* Adjust font size for small screens */
+        margin: 0px 3px; /* Adjust margin for small screens */
+    }
+}
+
+/* Responsive styles for medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .responsive-price {
+        font-size: 18px; /* Adjust font size for medium screens */
+        margin: 0px 4px; /* Adjust margin for medium screens */
+    }
+}
+
+/* Responsive styles for large screens (e.g., desktop) */
+@media (min-width: 769px) {
+    .responsive-price {
+        font-size: 22px; /* Adjust font size for large screens */
+        margin: 0px 6px; /* Adjust margin for large screens */
+    }
+}
 

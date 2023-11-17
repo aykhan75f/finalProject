@@ -68,22 +68,53 @@
 
 /* Styles for the cart button */
 .cart-button button {
+  position:relative;
+  left:2px;
+  right:-1px;
   display: flex; /* Add display:flex to make its children align horizontally */
   align-items: center; /* Center the children vertically */
   background-color: transparent;
   border: none;
   font-size: 20px;
   color: white;
-  margin-left: 20px; /* Adjust spacing between navigation and cart button */
+  margin-left: 1px; /* Adjust spacing between navigation and cart button */
 }
 
 /* Styles for the badge */
-.cart-button .badge.bg-danger {
+.badge.bg-danger {
+  position:relative;
   font-size: 8px; 
+  top: 10px;
+  left:-6px;
+
 }
 
-/* Styles for the logout button inside the cart button */
-.cart-button button {
-  margin-left: 5px; /* Adjust spacing between cart icon and logout icon */
+/* Add styles for the logout button */
+.logout-button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: white;
+  margin-left: 5px; /* Adjust spacing between cart button and logout button */
+
+  /* Responsive styles for smaller screens */
+  @media (max-width: 767px) {
+    display: none; /* Hide the logout button on smaller screens */
+  }
+}
+
+.search-bar input.placeholder-animation {
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeInOut 5s infinite; /* Adjust the duration as needed */
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
 }
 
