@@ -37,23 +37,21 @@
 }
 
 .search-bar input {
-  width: 20vw; /* Take up the entire available width */
-  padding: 8px; /* Adjust padding for better spacing */
+  width: 20vw; 
+  padding: 8px;
   border: none;
   border-radius: 10px;
   background-color: white;
   color: black;
-  font-family: 'Poppins', sans-serif;
   transition: 0.6s ease out;
   height: 28px;
-  font-size: 14px; /* Adjust font size for better readability */
+  font-size: 14px; 
   margin-left: 30vw;
 
   display: flex;
 
-  /* Responsive styles for smaller screens */
   @media (max-width: 767px) {
-    font-size: 12px; /* Further adjust font size for smaller screens if needed */
+    font-size: 12px; 
   }
 }
 
@@ -96,25 +94,10 @@
   font-size: 20px;
   color: white;
   margin-left: 5px; /* Adjust spacing between cart button and logout button */
-
-  /* Responsive styles for smaller screens */
-  @media (max-width: 767px) {
-    display: none; /* Hide the logout button on smaller screens */
-  }
 }
 
-.search-bar input.placeholder-animation {
-  transition: opacity 0.5s ease-in-out;
-  animation: fadeInOut 5s infinite; /* Adjust the duration as needed */
+
+.cdk-overlay-container .mat-autocomplete-panel .mat-option {
+  color: black; /* Set the text color for autocomplete options */
+  background-color: white; /* Set the background color for autocomplete options */
 }
-
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-

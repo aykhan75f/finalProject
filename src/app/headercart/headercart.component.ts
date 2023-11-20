@@ -14,7 +14,7 @@ export class HeadercartComponent {
   ngOnInit(): void {
     this.cartService.getProducts()
     .subscribe(res=>{
-      this.totalItem = res.length;
+      this.totalItem = (JSON.parse(sessionStorage.getItem('cartList'))).length;
     })
   }
 }
