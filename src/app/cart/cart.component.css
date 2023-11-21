@@ -92,11 +92,11 @@
     background-color: transparent;
     position: relative;
     border: none;
-    align-items: center;
+    align-items:flex-start;
   }
   
   .btn::after {
-    content: 'delete';
+    content: 'Remove';
     position: absolute;
     top: -130%;
     left: 50%;

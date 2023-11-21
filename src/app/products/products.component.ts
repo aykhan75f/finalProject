@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { FaStackComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-products',
@@ -18,6 +19,7 @@ export class ProductsComponent implements OnInit {
   showSortButtons: boolean = false;
   showFilterButtons: boolean = false;
   selectedRatingFilters: number[] = [];
+  fetching:boolean = false;
   selectedPriceFilters: { min: number; max: number }[] = [];
   priceSortOrder: 'asc' | 'desc' = 'asc';
   ratingSortOrder: 'asc' | 'desc' = 'asc';
@@ -35,6 +37,7 @@ export class ProductsComponent implements OnInit {
       .subscribe(res => {
         this.productList = res;
         this.filterCategory = res;
+        this.fetching = true;
         this.productList.forEach((a: any) => {
           if (a.category === "women's clothing" || a.category === "men's clothing") {
             a.category = "fashion"
