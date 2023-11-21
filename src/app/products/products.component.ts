@@ -4,6 +4,7 @@ import { ApiService } from '../service/api.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -27,7 +28,7 @@ export class ProductsComponent implements OnInit {
     { min: 100, max: 200, label: 'INR 100-200' },
     { min: 400, max: 1000, label: 'INR 400-1000' }
   ];
-  constructor(private api: ApiService, private cartService: CartService, private toastr: ToastrService) { }
+  constructor(private api: ApiService, private cartService: CartService, private toastr: ToastrService,private router:Router) { }
 
   ngOnInit(): void {
     this.api.getProduct()
@@ -49,7 +50,10 @@ export class ProductsComponent implements OnInit {
   }
   addtocart(item: any) {
     this.cartService.addtoCart(item);
-    this.showSuccess()
+    this.showSuccess();
+    this.router.navigateByUrl('/products', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/cart']);
+      });
   }
   filter(category: string) {
     this.filterCategory = this.productList
