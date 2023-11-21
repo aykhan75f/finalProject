@@ -368,8 +368,6 @@ p {
       margin-right: 8px; /* Adjust spacing for medium screens */
   }
 }
-
-/* Responsive styles for large screens (e.g., desktop) */
 @media (min-width: 769px)and (max-width: 950px) {
   .but .icon {
       margin-right: 10px; /* Adjust spacing for large screens */
