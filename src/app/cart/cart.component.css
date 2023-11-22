@@ -1,172 +1,188 @@
 .mat-product-image {
-    width: 120px;
-  }
-  
-  .mat-description {
-    width: 25%;
-  }
-  
-  .mat-price {
-    width: 12%;
-  }
-  
-  .mat-quantity {
-    width: 12%;
-  }
-  
-  .mat-total {
-    width: 12%;
-  }
-  
-  .mat-button {
-    margin: 0;
-    padding: 6px 10px;
-    font-size: 14px;
-    border-radius: 20px;
-  }
-  
-  
-  .mat-button-danger1 {
-    color: #fff;
-    background-color: lightcoral;
-    border-radius: 20px;
-  }
-  
-  .mat-button-primary {
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 20px;
-  }
-  
-  .mat-button-success {
-    background-color: #28a745;
-    color: #fff;
-    border-radius: 20px;
-  }
-  
-  .mat-card {
-    background-color: #fff;
-    padding: 16px;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  .mat-card-title {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  
-  .mat-center {
-    text-align: center;
-    margin-top: 24px;
-  }
-  .mat-image-responsive {
-    max-width: 100%;  /* Ensures the image does not exceed its container's width */
-  height: auto;     /* Automatically adjust the height while maintaining the aspect ratio */
-  display: block;   /* Removes any extra space around the image */
-  margin: 0 auto;   /* Center the image horizontally within its container */
+  width: 120px;
+}
+
+.mat-description {
+  width: 25%;
+}
+
+.mat-price {
+  width: 12%;
+}
+
+.mat-quantity {
+  width: 12%;
+}
+
+.mat-total {
+  width: 12%;
+}
+
+.mat-button {
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.mat-button-danger1 {
+  color: #fff;
+  background-color: lightcoral;
+  border-radius: 20px;
+}
+
+.mat-button-primary {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.mat-button-success {
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.mat-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.mat-card-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.mat-center {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.mat-image-responsive {
+  max-width: 100%;
+  /* Ensures the image does not exceed its container's width */
+  height: auto;
+  /* Automatically adjust the height while maintaining the aspect ratio */
+  display: block;
+  /* Removes any extra space around the image */
+  margin: 0 auto;
+  /* Center the image horizontally within its container */
   max-height: 200px;
-  }
+}
+
 .mat-table {
-    max-width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .mat-table th,
-  .mat-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .mat-table th {
-    background-color: #f2f2f2;
-  }
-  
-  .mat-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  .mat-container{
-    overflow-x: auto;
-  }
-  .btn {
-    background-color: transparent;
-    position: relative;
-    border: none;
-    align-items:flex-start;
-  }
-  
-  .btn::after {
-    content: 'Remove';
-    position: absolute;
-    top: -130%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    height: fit-content;
-    background-color: rgb(168, 7, 7);
-    padding: 4px 8px;
-    border-radius: 5px;
-    transition: .2s linear;
-    transition-delay: .2s;
-    color: white;
-    text-transform: uppercase;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .icon {
-    transform: scale(1.2);
-    transition: .2s linear;
-  }
-  
-  .btn:hover > .icon {
-    transform: scale(1.5);
-  }
-  
-  .btn:hover > .icon path {
-    fill: rgb(168, 7, 7);
-  }
-  
-  .btn:hover::after {
-    visibility: visible;
-    opacity: 1;
-    top: -160%;
-  }
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-table th,
+.mat-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.mat-table th {
+  background-color: #f2f2f2;
+}
+
+.mat-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mat-container {
+  overflow-x: auto;
+}
+
+.btn {
+  background-color: transparent;
+  position: relative;
+  border: none;
+  align-items: flex-start;
+}
+
+.btn::after {
+  content: "Remove";
+  position: absolute;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(168, 7, 7);
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: 0.2s linear;
+  transition-delay: 0.2s;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  align-items: center;
+}
+
+.icon {
+  transform: scale(1.2);
+  transition: 0.2s linear;
+}
+
+.btn:hover > .icon {
+  transform: scale(1.5);
+}
+
+.btn:hover > .icon path {
+  fill: rgb(168, 7, 7);
+}
+
+.btn:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: -160%;
+}
+
+.btn-donate {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  padding: 0.9em 1.4em;
+  min-width: 120px;
+  min-height: 44px;
+  font-size: var(--size, 1rem);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+  border: none;
+  border-radius: var(--radii);
+  color: var(--btn-bg-color);
+  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5),
+    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
+    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+.btn-donate:hover {
+  background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
   .btn-donate {
-    --clr-font-main: hsla(0 0% 20% / 100);
-    --btn-bg-1: hsla(194 100% 69% / 1);
-    --btn-bg-2: hsla(217 100% 56% / 1);
-    --btn-bg-color: hsla(360 100% 100% / 1);
-    --radii: 0.5em;
-    cursor: pointer;
-    padding: 0.9em 1.4em;
-    min-width: 120px;
-    min-height: 44px;
-    font-size: var(--size, 1rem);
-    font-family: "Segoe UI", system-ui, sans-serif;
-    font-weight: 500;
-    transition: 0.8s;
-    background-size: 280% auto;
-    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
-    border: none;
-    border-radius: var(--radii);
-    color: var(--btn-bg-color);
-    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+    transition: linear;
   }
-  
-  .btn-donate:hover {
-    background-position: right top;
-  }
-  
-  .btn-donate:is(:focus, :focus-visible, :active) {
-    outline: none;
-    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    .btn-donate {
-      transition: linear;
-    }
-  }
-  
+}

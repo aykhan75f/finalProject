@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../service/cart.service';
-import { debounceTime, distinctUntilChanged, map, startWith } from 'rxjs/operators';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  map,
+  startWith,
+} from 'rxjs/operators';
 import { LoginService } from '../service/login.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
@@ -29,7 +34,7 @@ export class HeaderComponent implements OnInit {
   public productList: any;
   public productTitles: string[] = [];
   public showAutocomplete: boolean = false;
-  filteroptions!: Observable<string[]>
+  filteroptions!: Observable<string[]>;
   formcontrol = new FormControl('');
 
   constructor(
@@ -42,11 +47,10 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cartService.getProducts()
-    .subscribe(res=>{
+    this.cartService.getProducts().subscribe((res) => {
       this.totalItem = Number(sessionStorage.getItem('length'));
     });
-    
+
     this.cartService.search
       .pipe(debounceTime(2000), distinctUntilChanged())
       .subscribe((searchTerm) => {
@@ -57,10 +61,12 @@ export class HeaderComponent implements OnInit {
       this.productTitles = res.map((product: any) => product.title);
     });
     this.filteroptions = this.formcontrol.valueChanges.pipe(
-    startWith(''), map(value => this._FILTER(value || '')))
+      startWith(''),
+      map((value) => this._FILTER(value || ''))
+    );
   }
 
-  search(searchTerm:string) {
+  search(searchTerm: string) {
     this.showAutocomplete = searchTerm.length > 0;
     this.cartService.search.next(searchTerm);
   }
@@ -94,6 +100,8 @@ export class HeaderComponent implements OnInit {
   }
   private _FILTER(value: string): string[] {
     const searchvalue = value.toLocaleLowerCase();
-    return this.productTitles.filter(option => option.toLocaleLowerCase().includes(searchvalue));
+    return this.productTitles.filter((option) =>
+      option.toLocaleLowerCase().includes(searchvalue)
+    );
   }
 }

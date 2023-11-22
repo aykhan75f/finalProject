@@ -27,8 +27,22 @@ describe('HeadercartComponent', () => {
 
   it('should set totalItem on ngOnInit', () => {
     const mockProducts = [
-      { title: 'Product 1', image: 'image1.jpg', description: 'Description 1', price: 10, quantity: 2, total: 20 },
-      { title: 'Product 2', image: 'image2.jpg', description: 'Description 2', price: 15, quantity: 3, total: 45 },
+      {
+        title: 'Product 1',
+        image: 'image1.jpg',
+        description: 'Description 1',
+        price: 10,
+        quantity: 2,
+        total: 20,
+      },
+      {
+        title: 'Product 2',
+        image: 'image2.jpg',
+        description: 'Description 2',
+        price: 15,
+        quantity: 3,
+        total: 45,
+      },
     ];
 
     cartService.getProducts.and.returnValue(of(mockProducts));

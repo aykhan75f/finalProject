@@ -1,13 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins";
 }
-.cont{
-  width:100%;
-  height:100vh;
-  background: linear-gradient(90deg, rgba(2,0,36,0.2) 0%, );
+
+.cont {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.2) 0%, );
   min-height: 90vh;
   display: flex;
   font-family: "Poppins";
@@ -19,169 +20,193 @@
   background-image: url("https://wallpapercave.com/wp/wp2757874.gif");
   background-size: cover;
 }
+
 .container {
-    position: relative;
-    max-width: 380px;
-    width: 100%;
-    font-family: "Poppins";
-    background: rgba(255, 255, 255, 0.4);
-    padding: 20px 50px;
-    border-radius: 25px;
-  }
-  .al{
-    text-align: center;
-    transition: transform 0.2s ease;
-    margin-top: 15px;
-    font-size: 12pt;
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+  font-family: "Poppins";
+  background: rgba(255, 255, 255, 0.4);
+  padding: 20px 50px;
+  border-radius: 25px;
+}
 
-  }
-  .al:hover{
-    transform: scale(1.03);
-  }
-  .a5{
-    text-align: center;
-    transition: transform 0.2s ease;
-    margin-top: 7px;
-    color: black;
-  }
-  a5:hover{
-    transform: scale(1.03);
-  }
-  .a1{
-    text-align: center;
-    transition: transform 0.2s ease;
-    font-size: 12pt;
-    margin-bottom: 5px;
-  }
-  .a1:hover{
-    transform: scale(1.03);
-  }
-  .sign{
-    color:black;
-    text-decoration: none;
-    text-align: center;
-  }
-  .container header {
-    font-size: 1.5rem;
-    color:black;
-    font-weight: 500;
-    text-align: center;
-  }
-  .container .form {
-    margin-top: 20px;
-  }
-  .form .input-box {
-    width: 100%;
-    margin-top: 5px;
-    transition: transform 0.2s ease;
-    color: black;
-    border-radius: 60px;
-    box-shadow: 0px 5px 5px 0px rgba(255, 255, 255, 0.5);
-  }
-  .form .input-box:hover{
-    transform: scale(1.03);
-  }
-  .input-box label {
-    color: black;
-  }
-  .form :where(.input-box input, .select-box) {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    outline: none;
-    font-size: 1rem;
-    color:black;
-    margin-top: 8px;
-    border-radius: 6px;
-    padding: 0 15px;
-  }
-  .input-box input:focus {
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  }
-  .form .column {
-    display: flex;
-    column-gap: 15px;
-  }
-  .form .gender-box {
-    margin-top: 20px;
-  }
-  .gender-box h3 {
-    color: black;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 8px;
-  }
+.al {
+  text-align: center;
+  transition: transform 0.2s ease;
+  margin-top: 15px;
+  font-size: 12pt;
 
-  .form .submit-btn {
-    height: 55px;
-    width: 100%;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-top: 30px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: rgb(2,0,36);
-  background:linear-gradient(90deg, rgba(2,0,68,1) 0%, );
+}
+
+.al:hover {
+  transform: scale(1.03);
+}
+
+.a5 {
+  text-align: center;
+  transition: transform 0.2s ease;
+  margin-top: 7px;
+  color: black;
+}
+
+a5:hover {
+  transform: scale(1.03);
+}
+
+.a1 {
+  text-align: center;
+  transition: transform 0.2s ease;
+  font-size: 12pt;
+  margin-bottom: 5px;
+}
+
+.a1:hover {
+  transform: scale(1.03);
+}
+
+.sign {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.container header {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 500;
+  text-align: center;
+}
+
+.container .form {
+  margin-top: 20px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 5px;
+  transition: transform 0.2s ease;
+  color: black;
+  border-radius: 60px;
+  box-shadow: 0px 5px 5px 0px rgba(255, 255, 255, 0.5);
+}
+
+.form .input-box:hover {
+  transform: scale(1.03);
+}
+
+.input-box label {
+  color: black;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: black;
+  margin-top: 8px;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form .submit-btn {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 68, 1) 0%, );
   border-radius: 25px;
   transition: transform 0.3s ease;
 }
+
 .form .submit-btn:hover {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,68,1) 0%, );
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 68, 1) 0%, );
   transform: scale(1.1);
 
 }
-  
-  @media screen and (max-width: 500px) {
-    .form .column {
-      flex-wrap: wrap;
-    }
-    .form :where(.gender-option, .gender) {
-      row-gap: 15px;
-    }
-  }
-  
-  .form-shadow{
-    box-shadow: rgba(187, 185, 185, 0.35) 0px 5px 15px;
-  }
-  
-  input.ng-invalid.ng-touched{
-    border: red 2px solid;
-  }
-  
-  small{
-    color: red;
-    font-weight: bold;
+
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
   }
 
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
 
-  span{
-    padding: 5px 5px;
-    font-weight: bold;
-  }
-  
-  input.ng-invalid.ng-touched{
-    border: red 2px solid;
-  }
-  
-  input.ng-pending{
-    border: yellow 2px solid;
-  }
-  
-  .container.VALID{
-    border: green 3px solid;
-  }
-  .container.INVALID{
-    border: red 3px solid;
-  }
-  .container.PENDING{
-    border: orange 3px solid;
-  }
-  .email{
-    border-radius: 25px;
-  }
-  .password{
-    border-radius: 25px;
-  }
+.form-shadow {
+  box-shadow: rgba(187, 185, 185, 0.35) 0px 5px 15px;
+}
+
+input.ng-invalid.ng-touched {
+  border: red 2px solid;
+}
+
+small {
+  color: red;
+  font-weight: bold;
+}
+
+
+span {
+  padding: 5px 5px;
+  font-weight: bold;
+}
+
+input.ng-invalid.ng-touched {
+  border: red 2px solid;
+}
+
+input.ng-pending {
+  border: yellow 2px solid;
+}
+
+.container.VALID {
+  border: green 3px solid;
+}
+
+.container.INVALID {
+  border: red 3px solid;
+}
+
+.container.PENDING {
+  border: orange 3px solid;
+}
+
+.email {
+  border-radius: 25px;
+}
+
+.password {
+  border-radius: 25px;
+}

@@ -10,18 +10,30 @@ import { ProductdetailComponent } from './products/productdetail/productdetail.c
 import { loggedinguardGuard } from './auth/loggedinguard.guard';
 
 const routes: Routes = [
-  {path:"signup",component:SignupComponent,canActivate:[loggedinguardGuard]},
-  {path:"login",component:LoginComponent},
-  {path:'', redirectTo:'login',pathMatch:'full'},
-  {path:"products", component:ProductsComponent,canActivate:[authguardGuard]},
-  {path:"cart", component: CartComponent,canActivate:[authguardGuard]},
-  {path:"notfound",component:NotfoundComponent},
-  {path:"products/product/:id",component:ProductdetailComponent,canActivate:[authguardGuard]},
-  {path:'**',component:NotfoundComponent},
+  {
+    path: 'signup',
+    component: SignupComponent,
+    canActivate: [loggedinguardGuard],
+  },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    canActivate: [authguardGuard],
+  },
+  { path: 'cart', component: CartComponent, canActivate: [authguardGuard] },
+  { path: 'notfound', component: NotfoundComponent },
+  {
+    path: 'products/product/:id',
+    component: ProductdetailComponent,
+    canActivate: [authguardGuard],
+  },
+  { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

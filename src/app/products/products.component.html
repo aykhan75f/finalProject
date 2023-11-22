@@ -1,42 +1,46 @@
 <app-header></app-header>
 <div class="card-top container-fluid">
-    <div class="container d-flex">
-            <a (click)="filter('')">
-                <img class="item" src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
-                <h6 class="text">All products</h6>
-            </a>
-            <a (click)="filter('electronics')">
-                <img class="item" src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
-                <h6 class="text">Electronics</h6>
-            </a>
-            <a (click)="filter('fashion')">
-                <img class="item" src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
-                <h6 class="text">Fashion</h6>
-            </a>
-            <a (click)="filter('jewelery')">
-                <img class="item"src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
-                <h6 class="text">Jewellery</h6>
-            </a>
-    </div>
+  <div class="container d-flex">
+    <a (click)="filter('')">
+      <img class="item" src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+      <h6 class="text">All products</h6>
+    </a>
+    <a (click)="filter('electronics')">
+      <img class="item" src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+      <h6 class="text">Electronics</h6>
+    </a>
+    <a (click)="filter('fashion')">
+      <img class="item" src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+      <h6 class="text">Fashion</h6>
+    </a>
+    <a (click)="filter('jewelery')">
+      <img class="item"
+        src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50"
+        alt="">
+      <h6 class="text">Jewellery</h6>
+    </a>
+  </div>
 </div>
 <div>
   <div class="buttons">
-    <button mat-button class="sort-button" (click)="showSortButtons = !showSortButtons">Sort By<mat-icon >sort</mat-icon></button>
+    <button mat-button class="sort-button" (click)="showSortButtons = !showSortButtons">Sort
+      By<mat-icon>sort</mat-icon></button>
     <div *ngIf="showSortButtons" class="sort-options">
       <button mat-button class="sort-button1" (click)="sortProducts('price', 'asc')">Price Low-to-High</button>
       <button mat-button class="sort-button1" (click)="sortProducts('price', 'desc')">Price High-to-Low</button>
       <button mat-button class="sort-button1" (click)="sortProducts('rating.rate', 'desc')">Popularity</button>
     </div>
-    <button mat-button class="sort-button" (click)="showFilterButtons = !showFilterButtons">Filter By<mat-icon >filter_alt</mat-icon></button>
+    <button mat-button class="sort-button" (click)="showFilterButtons = !showFilterButtons">Filter
+      By<mat-icon>filter_alt</mat-icon></button>
     <div *ngIf="showFilterButtons" class="filter-options">
-  <div class="filter-section">
-    <h6>Rating:</h6>
-    <label class="checkbox-label" *ngFor="let rating of [1, 2, 3, 4]">
-      <input type="checkbox" (change)="applyRatingFilter(rating)" /> {{ rating }}-{{ rating + 1 }}
-    </label>
-  </div>
-</div>
-                     
+      <div class="filter-section">
+        <h6>Rating:</h6>
+        <label class="checkbox-label" *ngFor="let rating of [1, 2, 3, 4]">
+          <input type="checkbox" (change)="applyRatingFilter(rating)" /> {{ rating }}-{{ rating + 1 }}
+        </label>
+      </div>
+    </div>
+
     <div *ngIf="showFilterButtons" class="filter-options">
       <div class="filter-section">
         <h6>Price:</h6>
@@ -44,7 +48,7 @@
           <input type="checkbox" (change)="applyPriceFilter(range.min, range.max)" /> {{ range.label }}
         </label>
       </div>
-    </div>    
+    </div>
   </div>
 </div>
 <div class="loader-container" *ngIf="fetching == false">
@@ -53,25 +57,26 @@
 </div>
 
 
-    <div class="card-container">
-      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
-        <mat-card class="example-card">
-          <mat-card-content  [routerLink]="'/products/product/'+item.id">
-            <img [src]="item.image" alt="" >
-            <h3 class="title">{{ item.title }}</h3>
-            <p class="des">{{ item.description }}</p>
-            <div>
-            <p class="des1"><strong>Rating:</strong> {{ item.rating.rate }}</p>
-            <p class="des2"><strong>     Available: </strong> {{ item.rating.count }}</p>
-            </div>
-            <div>
-            <p class="font"><strong>Price: </strong> INR {{ item.price }}</p>
-            
+<div class="card-container">
+  <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+    <mat-card class="example-card">
+      <mat-card-content [routerLink]="'/products/product/'+item.id">
+        <img [src]="item.image" alt="">
+        <h3 class="title">{{ item.title }}</h3>
+        <p class="des">{{ item.description }}</p>
+        <div>
+          <p class="des1"><strong>Rating:</strong> {{ item.rating.rate }}</p>
+          <p class="des2"><strong> Available: </strong> {{ item.rating.count }}</p>
         </div>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button class ="but" (click)="addtocart(item)"><mat-icon class = "icon">shopping_cart"</mat-icon>ADD TO CART</button>
-          </mat-card-actions>
-        </mat-card>
-      </ng-container>
-    </div>
+        <div>
+          <p class="font"><strong>Price: </strong> INR {{ item.price }}</p>
+
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="but" (click)="addtocart(item)"><mat-icon class="icon">shopping_cart"</mat-icon>ADD TO
+          CART</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>

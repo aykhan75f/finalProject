@@ -4,9 +4,9 @@ import { HoverDirective } from './hover.directive';
 import { By } from '@angular/platform-browser';
 
 @Component({
-  template: `<div appHover></div>`
+  template: `<div appHover></div>`,
 })
-class TestHoverComponent { }
+class TestHoverComponent {}
 
 describe('HoverDirective', () => {
   let fixture: ComponentFixture<TestHoverComponent>;
@@ -21,7 +21,9 @@ describe('HoverDirective', () => {
   });
 
   it('should apply styles on mouseenter', () => {
-    const divElement = fixture.debugElement.query(By.directive(HoverDirective)).nativeElement;
+    const divElement = fixture.debugElement.query(
+      By.directive(HoverDirective)
+    ).nativeElement;
 
     divElement.dispatchEvent(new Event('mouseenter'));
     fixture.detectChanges();
@@ -32,7 +34,9 @@ describe('HoverDirective', () => {
   });
 
   it('should apply styles on mouseleave', () => {
-    const divElement = fixture.debugElement.query(By.directive(HoverDirective)).nativeElement;
+    const divElement = fixture.debugElement.query(
+      By.directive(HoverDirective)
+    ).nativeElement;
 
     divElement.dispatchEvent(new Event('mouseleave'));
     fixture.detectChanges();

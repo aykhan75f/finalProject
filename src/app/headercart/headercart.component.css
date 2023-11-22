@@ -7,11 +7,13 @@
   align-items: center;
   padding: 10px;
   font-family: 'Poppins', sans-serif;
-  height: 43px; /* Set the desired height */
+  height: 43px;
+  /* Set the desired height */
 
   /* Responsive styles for smaller screens */
   @media (max-width: 767px) {
-      padding: 5px; /* Reduce padding on smaller screens */
+    padding: 5px;
+    /* Reduce padding on smaller screens */
   }
 }
 
@@ -32,11 +34,13 @@
 
 /* Styles for the search bar */
 .search-bar {
-  flex-grow: 1; /* Allow the search bar to take up available space */
+  flex-grow: 1;
+  /* Allow the search bar to take up available space */
 }
 
 .search-bar input {
-  width: 350px; /* Take up the entire available width */
+  width: 350px;
+  /* Take up the entire available width */
   padding: 10px;
   border: none;
   border-radius: 25px;
@@ -46,12 +50,13 @@
   transition: 0.6s ease out;
   align-items: center;
   margin-left: 450px;
-  height:28px;
+  height: 28px;
   font-size: 12px;
 
   /* Responsive styles for smaller screens */
   @media (max-width: 767px) {
-      font-size: 10px; /* Adjust font size for better readability */
+    font-size: 10px;
+    /* Adjust font size for better readability */
   }
 }
 
@@ -60,23 +65,26 @@
 }
 
 .cart-button button {
-  position:relative;
-  left:2px;
-  right:-1px;
-  display: flex; /* Add display:flex to make its children align horizontally */
-  align-items: center; /* Center the children vertically */
+  position: relative;
+  left: 2px;
+  right: -1px;
+  display: flex;
+  /* Add display:flex to make its children align horizontally */
+  align-items: center;
+  /* Center the children vertically */
   background-color: transparent;
   border: none;
   font-size: 20px;
   color: white;
-  margin-left: 1px; /* Adjust spacing between navigation and cart button */
+  margin-left: 1px;
+  /* Adjust spacing between navigation and cart button */
 }
 
 /* Styles for the badge */
 .badge.bg-danger {
-  position:relative;
-  font-size: 8px; 
+  position: relative;
+  font-size: 8px;
   top: 10px;
-  left:-6px;
+  left: -6px;
 
 }

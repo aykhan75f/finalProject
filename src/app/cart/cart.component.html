@@ -1,71 +1,75 @@
 <app-headercart></app-headercart>
 <ng-container *ngIf="products.length != 0">
-  <div>  
-  <div class="mat-container">
-    <div class="mat-card-table">
-      <div class="mat-cart-product">
-        <table class="mat-table mat-table-responsive">
-          <thead>
-            <tr>
-              <th>Sr.No</th>
-              <th>Product Name</th>
-              <th>Product Image</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of cartItems; let i = index">
-              <td>{{ i + 1 }}</td>
-              <td>{{ item.title }}</td>
-              <td><img class="mat-product-image" [src]="item.image" alt=""></td>
-              <td class="mat-description">{{ item.description }}</td>
-              <td class="mat-price">{{ item.price }}</td>
-              <td class="mat-quantity">{{ item.quantity }}</td>
-              <td class="mat-total">{{ item.total }}</td>
-              <td>
-                <button class="btn" (click)="removeItem(item)">
-                  <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
-                  <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
-                </svg>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="5"></td>
-              <td>
-                <button class="btn-donate" (click)="emptycart()">
-                  Empty Cart
-              </button>
-              </td>
-              <td>
-                <button routerLink="/products" class="btn-donate">Shop More</button>
-              </td>
-              <td><strong>Grand Total: INR{{ total }}</strong></td>
-            </tr>
-          </tbody>
-        </table>
+  <div>
+    <div class="mat-container">
+      <div class="mat-card-table">
+        <div class="mat-cart-product">
+          <table class="mat-table mat-table-responsive">
+            <thead>
+              <tr>
+                <th>Sr.No</th>
+                <th>Product Name</th>
+                <th>Product Image</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of cartItems; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.title }}</td>
+                <td><img class="mat-product-image" [src]="item.image" alt=""></td>
+                <td class="mat-description">{{ item.description }}</td>
+                <td class="mat-price">{{ item.price }}</td>
+                <td class="mat-quantity">{{ item.quantity }}</td>
+                <td class="mat-total">{{ item.total }}</td>
+                <td>
+                  <button class="btn" (click)="removeItem(item)">
+                    <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+                      <path transform="translate(-2.5 -1.25)"
+                        d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"
+                        id="Fill"></path>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5"></td>
+                <td>
+                  <button class="btn-donate" (click)="emptycart()">
+                    Empty Cart
+                  </button>
+                </td>
+                <td>
+                  <button routerLink="/products" class="btn-donate">Shop More</button>
+                </td>
+                <td><strong>Grand Total: INR{{ total }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </ng-container>
 
 <ng-container *ngIf="products.length == 0">
- <div>
-  <div class="mat-container">
-    <div class="mat-card">
-      <h5 class="mat-card-title">My Cart</h5>
-    </div>
-    <div class="mat-center">
-      <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="" class="mat-image-responsive">
-      <h4>Your cart is empty! Add items to it now</h4>
-      
-      <button mat-button routerLink="/products" class="mat-button mat-button-primary">Shop Now</button>
+  <div>
+    <div class="mat-container">
+      <div class="mat-card">
+        <h5 class="mat-card-title">My Cart</h5>
+      </div>
+      <div class="mat-center">
+        <img
+          src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+          alt="" class="mat-image-responsive">
+        <h4>Your cart is empty! Add items to it now</h4>
+
+        <button mat-button routerLink="/products" class="mat-button mat-button-primary">Shop Now</button>
+      </div>
     </div>
   </div>
-</div>
 </ng-container>

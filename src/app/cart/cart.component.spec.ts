@@ -12,10 +12,15 @@ describe('CartComponent', () => {
   let cartService: jasmine.SpyObj<CartService>;
 
   beforeEach(() => {
-    const cartServiceSpy = jasmine.createSpyObj('CartService', ['getProducts', 'removeCartItem', 'removeAllCart', 'getTotalPrice']);
+    const cartServiceSpy = jasmine.createSpyObj('CartService', [
+      'getProducts',
+      'removeCartItem',
+      'removeAllCart',
+      'getTotalPrice',
+    ]);
 
     TestBed.configureTestingModule({
-      declarations: [CartComponent,HeadercartComponent],
+      declarations: [CartComponent, HeadercartComponent],
       imports: [RouterTestingModule],
       providers: [{ provide: CartService, useValue: cartServiceSpy }],
     });
@@ -31,8 +36,22 @@ describe('CartComponent', () => {
 
   it('should call getProducts on ngOnInit and set products and grandTotal', () => {
     const mockProducts = [
-      { title: 'Product 1', image: 'image1.jpg', description: 'Description 1', price: 10, quantity: 2, total: 20 },
-      { title: 'Product 2', image: 'image2.jpg', description: 'Description 2', price: 15, quantity: 3, total: 45 },
+      {
+        title: 'Product 1',
+        image: 'image1.jpg',
+        description: 'Description 1',
+        price: 10,
+        quantity: 2,
+        total: 20,
+      },
+      {
+        title: 'Product 2',
+        image: 'image2.jpg',
+        description: 'Description 2',
+        price: 15,
+        quantity: 3,
+        total: 45,
+      },
     ];
 
     const mockGrandTotal = 65;
@@ -48,7 +67,14 @@ describe('CartComponent', () => {
   });
 
   it('should call removeCartItem on removeItem', () => {
-    const mockProduct = { title: 'Product 1', image: 'image1.jpg', description: 'Description 1', price: 10, quantity: 2, total: 20 };
+    const mockProduct = {
+      title: 'Product 1',
+      image: 'image1.jpg',
+      description: 'Description 1',
+      price: 10,
+      quantity: 2,
+      total: 20,
+    };
 
     component.removeItem(mockProduct);
 

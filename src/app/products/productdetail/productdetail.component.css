@@ -1,62 +1,70 @@
-.courses-detail-main-container{
+.courses-detail-main-container {
     width: 80%;
     margin: 50px auto;
     background-color: #efefef;
     padding: 10px 0px;
 }
-.course-detail-container{
+
+.course-detail-container {
     width: 90%;
     margin: 20px auto;
     padding: 10px 10px;
-    display:flex;
+    display: flex;
 }
-.course-details{
+
+.course-details {
     width: 70%;
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.course-banner-image{
+.course-banner-image {
     width: 100%;
     height: 320px;
     margin-top: 20px;
 }
-.course-title{
+
+.course-title {
     margin: 10px 0px;
     width: 100%;
     text-align: center;
 }
-.course-info{
+
+.course-info {
     display: flex;
     width: 100%;
     margin: 10px 0px;
 }
-.course-info-rating, .course-info-duration,.course-info-author{
+
+.course-info-rating,
+.course-info-duration,
+.course-info-author {
     width: 33%;
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
 }
-.course-desc{
+
+.course-desc {
     padding: 30px 50px;
     font-size: 14px;
 }
 
-.course-fake-rewiews-list{
+.course-fake-rewiews-list {
     padding: 30px 50px;
     font-size: 14px;
 }
 
-hr{
+hr {
     margin: 10px 0px;
     border: #DDD 2px solid;
-  }
+}
 
-.course-fake-rewiews{
+.course-fake-rewiews {
     margin: 15px 0px;
 }
 
-.course-action-items{
+.course-action-items {
     width: 28%;
     margin-left: 20px;
     padding: 5px 5px;
@@ -64,42 +72,48 @@ hr{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.side-bar-banner{
+.side-bar-banner {
     width: 100%;
     height: 200px;
     background-color: #28282B;
     text-align: center;
     padding: 70px 20px;
-    color:white;
+    color: white;
 }
-.course-selection-cat, .course-apply-coupon{
+
+.course-selection-cat,
+.course-apply-coupon {
     display: flex;
     width: 100%;
 }
 
-.course-selection-personal{
+.course-selection-personal {
     width: 50%;
     padding: 10px 0px;
     text-align: center;
     border-bottom: #28282B 2px solid;
 }
-.course-selection-team{
+
+.course-selection-team {
     width: 50%;
     padding: 10px 0px;
     text-align: center;
     border-bottom: #dddddd 2px solid;
 }
-.course-price-discount{
+
+.course-price-discount {
     padding: 15px 20px;
     white-space: nowrap;
     text-wrap: wrap;
 }
-.offer-timer{
-    color:dodgerblue;
+
+.offer-timer {
+    color: dodgerblue;
     font-size: 14px;
     padding: 5px 5px;
 }
-.buy-course-button{
+
+.buy-course-button {
     padding: 10px 30px;
     width: 90%;
     margin: 10px 15px;
@@ -108,14 +122,15 @@ hr{
     color: white;
 }
 
-.guarantee-div{
+.guarantee-div {
     width: 100%;
     padding: 10px 50px;
     text-align: center;
     font-size: 12px;
 }
 
-.course-selection-gift, .course-selection-coupon{
+.course-selection-gift,
+.course-selection-coupon {
     width: 50%;
     padding: 10px 0px;
     text-align: center;
@@ -124,19 +139,21 @@ hr{
     font-weight: bold;
 }
 
-.course-selection-gift > a, .course-selection-coupon > a{
+.course-selection-gift>a,
+.course-selection-coupon>a {
     color: #28282B;
     font-weight: bold;
 }
 
-.devider{
+.devider {
     border-bottom: #ddd 2px solid;
     margin: 30px 0px;
 }
-.devider-message{
+
+.devider-message {
     width: 30px;
     height: 30px;
-    padding:4px 7px;
+    padding: 4px 7px;
     font-size: 12px;
     border: #ddd 2px solid;
     border-radius: 50%;
@@ -147,23 +164,23 @@ hr{
     color: #888;
 }
 
-.subscribe-to{
+.subscribe-to {
     width: 100%;
     font-size: 18px;
     padding: 20px 20px;
 }
 
-.subscribe-to > p{
+.subscribe-to>p {
     font-size: 12px;
     margin: 20px 0px;
 }
 
-.subscribe-to > p > a{
+.subscribe-to>p>a {
     font-weight: bold;
     color: dodgerblue;
 }
 
-.subscribe-course-button{
+.subscribe-course-button {
     padding: 10px 30px;
     width: 90%;
     margin: 10px 15px;
@@ -172,22 +189,26 @@ hr{
     background-color: white;
 }
 
-.prev-nect-course{
+.prev-nect-course {
     margin: 20px 0px;
     padding: 30px 0px;
 }
-.prev-nect-course > button {
+
+.prev-nect-course>button {
     padding: 10px 30px;
     border: none;
     background-color: dodgerblue;
-    color:#ddd;
+    color: #ddd;
 }
-.prev-btn{
+
+.prev-btn {
     float: left;
 }
-.next-btn{
+
+.next-btn {
     float: right;
 }
+
 .but {
     background-color: #1e90ff;
     color: white;
@@ -200,32 +221,40 @@ hr{
     display: block;
     margin: 0 auto;
     text-align: center;
-  }
-  .course-banner-image-container {
+}
+
+.course-banner-image-container {
     width: 100%;
-    max-height: 320px; /* Set a maximum height to prevent excessive expansion */
+    max-height: 320px;
+    /* Set a maximum height to prevent excessive expansion */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Hide the image overflow if it exceeds the container */
+    overflow: hidden;
+    /* Hide the image overflow if it exceeds the container */
 }
 
 .course-banner-image {
     width: auto;
     max-height: 100%;
-    object-fit: contain; /* Adjust the 'object-fit' value as needed (contain, cover, etc.) */
+    object-fit: contain;
+    /* Adjust the 'object-fit' value as needed (contain, cover, etc.) */
 }
+
 /* Add this CSS in your component's CSS file or a global CSS file */
 .course-fake-rewiews-name {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px; /* Add some spacing between the name and the content below */
+    margin-bottom: 10px;
+    /* Add some spacing between the name and the content below */
 }
 
 .course-fake-rewiews-name h3 {
-    margin: 0; /* Reset margin to avoid extra space above the name */
+    margin: 0;
+    /* Reset margin to avoid extra space above the name */
 }
+
 /* Common styles for all screen sizes */
 .course-price-discount {
     display: flex;
@@ -241,30 +270,37 @@ hr{
 /* Responsive styles for small screens (e.g., mobile) */
 @media (max-width: 576px) {
     .course-price-discount span {
-        font-size: 14px; /* Adjust font size for small screens */
-        margin: 0px 3px; /* Adjust margin for small screens */
+        font-size: 14px;
+        /* Adjust font size for small screens */
+        margin: 0px 3px;
+        /* Adjust margin for small screens */
     }
 }
 
 /* Responsive styles for medium screens (e.g., tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
     .course-price-discount span {
-        font-size: 16px; /* Adjust font size for medium screens */
-        margin: 0px 4px; /* Adjust margin for medium screens */
+        font-size: 16px;
+        /* Adjust font size for medium screens */
+        margin: 0px 4px;
+        /* Adjust margin for medium screens */
     }
 }
 
 /* Responsive styles for large screens (e.g., desktop) */
 @media (min-width: 769px) {
     .course-price-discount span {
-        font-size: 20px; /* Adjust font size for large screens */
-        margin: 0px 6px; /* Adjust margin for large screens */
+        font-size: 20px;
+        /* Adjust font size for large screens */
+        margin: 0px 6px;
+        /* Adjust margin for large screens */
     }
 }
 
 /* Additional styles for the offer-timer */
 .offer-timer {
-    margin-top: 10px; /* Add margin to separate from the price section */
+    margin-top: 10px;
+    /* Add margin to separate from the price section */
 }
 
 .offer-timer p {
@@ -288,24 +324,29 @@ hr{
 /* Responsive styles for small screens (e.g., mobile) */
 @media (max-width: 576px) {
     .responsive-price {
-        font-size: 16px; /* Adjust font size for small screens */
-        margin: 0px 3px; /* Adjust margin for small screens */
+        font-size: 16px;
+        /* Adjust font size for small screens */
+        margin: 0px 3px;
+        /* Adjust margin for small screens */
     }
 }
 
 /* Responsive styles for medium screens (e.g., tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
     .responsive-price {
-        font-size: 18px; /* Adjust font size for medium screens */
-        margin: 0px 4px; /* Adjust margin for medium screens */
+        font-size: 18px;
+        /* Adjust font size for medium screens */
+        margin: 0px 4px;
+        /* Adjust margin for medium screens */
     }
 }
 
 /* Responsive styles for large screens (e.g., desktop) */
 @media (min-width: 769px) {
     .responsive-price {
-        font-size: 22px; /* Adjust font size for large screens */
-        margin: 0px 6px; /* Adjust margin for large screens */
+        font-size: 22px;
+        /* Adjust font size for large screens */
+        margin: 0px 6px;
+        /* Adjust margin for large screens */
     }
 }
-

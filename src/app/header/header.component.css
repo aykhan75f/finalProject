@@ -7,11 +7,13 @@
   align-items: center;
   padding: 10px;
   font-family: 'Poppins', sans-serif;
-  height: 43px; /* Set the desired height */
+  height: 43px;
+  /* Set the desired height */
 
   /* Responsive styles for smaller screens */
   @media (max-width: 767px) {
-      padding: 5px; /* Reduce padding on smaller screens */
+    padding: 5px;
+    /* Reduce padding on smaller screens */
   }
 }
 
@@ -33,11 +35,12 @@
 
 /* Styles for the search bar */
 .search-bar {
-  flex-grow: 1; /* Allow the search bar to take up available space */
+  flex-grow: 1;
+  /* Allow the search bar to take up available space */
 }
 
 .search-bar input {
-  width: 20vw; 
+  width: 20vw;
   padding: 8px;
   border: none;
   border-radius: 10px;
@@ -45,13 +48,13 @@
   color: black;
   transition: 0.6s ease out;
   height: 28px;
-  font-size: 14px; 
+  font-size: 14px;
   margin-left: 30vw;
 
   display: flex;
 
   @media (max-width: 767px) {
-    font-size: 12px; 
+    font-size: 12px;
   }
 }
 
@@ -66,24 +69,27 @@
 
 /* Styles for the cart button */
 .cart-button button {
-  position:relative;
-  left:2px;
-  right:-1px;
-  display: flex; /* Add display:flex to make its children align horizontally */
-  align-items: center; /* Center the children vertically */
+  position: relative;
+  left: 2px;
+  right: -1px;
+  display: flex;
+  /* Add display:flex to make its children align horizontally */
+  align-items: center;
+  /* Center the children vertically */
   background-color: transparent;
   border: none;
   font-size: 20px;
   color: white;
-  margin-left: 1px; /* Adjust spacing between navigation and cart button */
+  margin-left: 1px;
+  /* Adjust spacing between navigation and cart button */
 }
 
 /* Styles for the badge */
 .badge.bg-danger {
-  position:relative;
-  font-size: 8px; 
+  position: relative;
+  font-size: 8px;
   top: 10px;
-  left:-6px;
+  left: -6px;
 
 }
 
@@ -93,11 +99,14 @@
   border: none;
   font-size: 20px;
   color: white;
-  margin-left: 5px; /* Adjust spacing between cart button and logout button */
+  margin-left: 5px;
+  /* Adjust spacing between cart button and logout button */
 }
 
 
 .cdk-overlay-container .mat-autocomplete-panel .mat-option {
-  color: black; /* Set the text color for autocomplete options */
-  background-color: white; /* Set the background color for autocomplete options */
+  color: black;
+  /* Set the text color for autocomplete options */
+  background-color: white;
+  /* Set the background color for autocomplete options */
 }
